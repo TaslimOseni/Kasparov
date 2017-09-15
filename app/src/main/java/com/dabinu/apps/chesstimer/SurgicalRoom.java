@@ -23,6 +23,11 @@ public class SurgicalRoom extends AppCompatActivity {
     CountDownTimer countDownTimer;
     Vibrator vibrator;
 
+/*My onCreate method uses three other methods:
+    convertLongToString() takes a long value and converts it to String format (hh:mm)
+    convertStringToLong() takes a String value (hh:mm) and converts to a long value
+    theTextViewToggler() works based on onClick and toggles between the two textViews.
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +46,8 @@ public class SurgicalRoom extends AppCompatActivity {
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 
-        topText.setText(convertToTime(Long.parseLong(minutes) / 1000));
-        bottomText.setText(convertToTime(Long.parseLong(minutes) / 1000));
+        topText.setText(convertLongToString(Long.parseLong(minutes) / 1000));
+        bottomText.setText(convertLongToString(Long.parseLong(minutes) / 1000));
         topText.setBackgroundColor(Color.YELLOW);
         bottomText.setBackgroundColor(Color.YELLOW);
 
@@ -50,20 +55,20 @@ public class SurgicalRoom extends AppCompatActivity {
         topText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                thisIsVeryAnnoyingBecauseIhaveBeenTryingToDeviseTheBestWayToDoThisForDays(topText);
+                theTextViewToggler(topText);
             }
         });
 
         bottomText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                thisIsVeryAnnoyingBecauseIhaveBeenTryingToDeviseTheBestWayToDoThisForDays(bottomText);
+                theTextViewToggler(bottomText);
             }
         });
     }
 
 
-    public void thisIsVeryAnnoyingBecauseIhaveBeenTryingToDeviseTheBestWayToDoThisForDays(final TextView textView) {
+    public void theTextViewToggler(final TextView textView) {
 
         final TextView nextView;
 
@@ -75,24 +80,24 @@ public class SurgicalRoom extends AppCompatActivity {
 
         countDownTimer = null;
 
-        countDownTimer = new CountDownTimer(convertToLong(nextView.getText().toString()) * 1000, 1000) {
+        countDownTimer = new CountDownTimer(convertStringToLong(nextView.getText().toString()) * 1000, 1000) {
             @Override
             public void onTick(long l) {
-                nextView.setText(convertToTime(l / 1000));
+                nextView.setText(convertLongToString(l / 1000));
                 nextView.setBackgroundColor(Color.GREEN);
                 textView.setBackgroundColor(Color.RED);
                 nextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         countDownTimer.cancel();
-                        thisIsVeryAnnoyingBecauseIhaveBeenTryingToDeviseTheBestWayToDoThisForDays(nextView);
+                        theTextViewToggler(nextView);
                     }
                 });
             }
 
             @Override
             public void onFinish() {
-                nextView.setText("TIme up!!!");
+                nextView.setText("Time up!!!");
                 vibrator.vibrate(3000);
                 //todo: fix the onClick() when timeIsUp
             }
@@ -100,7 +105,7 @@ public class SurgicalRoom extends AppCompatActivity {
     }
 
 
-    public String convertToTime(long number) {
+    public String convertLongToString(long number) {
 
         String time = null;
 
@@ -126,7 +131,7 @@ public class SurgicalRoom extends AppCompatActivity {
     }
 
 
-    public static long convertToLong(String time) {
+    public static long convertStringToLong(String time) {
         long number = 0;
 
         char[] all = time.toCharArray();
