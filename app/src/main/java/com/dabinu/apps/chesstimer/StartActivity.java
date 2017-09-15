@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class StartActivity extends AppCompatActivity {
 
-    Button five, ten, fif, twen, thirt;
+    Button five, ten, fifteen, twenty, thirty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +17,15 @@ public class StartActivity extends AppCompatActivity {
 
         five = (Button) findViewById(R.id.five);
         ten = (Button) findViewById(R.id.ten);
-        fif = (Button) findViewById(R.id.fif);
-        twen = (Button) findViewById(R.id.twen);
-        thirt = (Button) findViewById(R.id.thirt);
+        fifteen = (Button) findViewById(R.id.fif);
+        twenty = (Button) findViewById(R.id.twen);
+        thirty = (Button) findViewById(R.id.thirt);
 
+        //Intent to got o the main activity: Named it surgical activity.
         final Intent intent = new Intent(this, SurgicalRoom.class);
 
 
+        //I set onClick listeners for EACH of the buttons (inefficient method, I know); passed a String through the intent.
         five.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -42,7 +44,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        fif.setOnClickListener(new View.OnClickListener(){
+        fifteen.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 String passed = Long.toString(1000 * 60 * 15);
@@ -51,7 +53,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        twen.setOnClickListener(new View.OnClickListener(){
+        twenty.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 String passed = Long.toString(1000 * 60 * 20);
@@ -60,7 +62,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        thirt.setOnClickListener(new View.OnClickListener(){
+        thirty.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 String passed = Long.toString(1000 * 60 * 30);

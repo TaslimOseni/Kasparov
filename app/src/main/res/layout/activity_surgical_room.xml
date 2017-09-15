@@ -11,16 +11,51 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="280dp"
             android:id="@+id/top"
             android:rotation="180"
+            android:layout_alignParentTop="true"
             android:textSize="50sp"
             android:gravity="center" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top"
+        android:layout_above="@+id/bottom"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_gravity="center"
+            android:background="#666"
+            android:src="@drawable/tas_stop"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="65dp"
+            android:scaleType="fitCenter"
+            android:background="#666"
+            android:src="@drawable/tas_play" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_gravity="center"
+            android:background="#666"
+            android:src="@drawable/tas_reset"/>
+
+    </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="270dp"
+            android:layout_height="280dp"
             android:id="@+id/bottom"
             android:layout_alignParentBottom="true"
             android:textSize="50sp"
