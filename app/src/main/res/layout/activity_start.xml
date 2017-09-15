@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dabinu.apps.chesstimer.StartActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Five"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:id="@+id/five"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/ten"
+        android:text="Ten"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:layout_below="@id/five"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/fif"
+        android:text="Fifteen"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:layout_below="@id/ten"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/twen"
+        android:text="Twenty"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:layout_below="@id/fif"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/thirt"
+        android:text="Thirty"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:layout_below="@id/twen"/>
+
+</RelativeLayout>
