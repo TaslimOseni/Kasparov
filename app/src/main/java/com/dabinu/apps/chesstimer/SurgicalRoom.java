@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class SurgicalRoom extends AppCompatActivity {
@@ -22,8 +23,10 @@ public class SurgicalRoom extends AppCompatActivity {
     TextView topText, bottomText;
     CountDownTimer countDownTimer;
     Vibrator vibrator;
+    ImageButton playpause, reset, stop;
 
-/*My onCreate method uses three other methods:
+
+/*  My onCreate method uses three other methods:
     convertLongToString() takes a long value and converts it to String format (hh:mm)
     convertStringToLong() takes a String value (hh:mm) and converts to a long value
     theTextViewToggler() works based on onClick and toggles between the two textViews.
@@ -45,6 +48,10 @@ public class SurgicalRoom extends AppCompatActivity {
         bottomText = (TextView) findViewById(R.id.bottom);
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
+        playpause = (ImageButton) findViewById(R.id.playPauseToggle);
+        stop = (ImageButton) findViewById(R.id.stop);
+        reset = (ImageButton) findViewById(R.id.reset);
+
 
         topText.setText(convertLongToString(Long.parseLong(minutes) / 1000));
         bottomText.setText(convertLongToString(Long.parseLong(minutes) / 1000));
@@ -55,6 +62,8 @@ public class SurgicalRoom extends AppCompatActivity {
         topText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Had to increase my min API to 21 to use the method below:
+                playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
                 theTextViewToggler(topText);
             }
         });
@@ -62,9 +71,20 @@ public class SurgicalRoom extends AppCompatActivity {
         bottomText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Had to increase my min API to 21 to use the method below:
+                playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
                 theTextViewToggler(bottomText);
             }
         });
+
+
+//        stop.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+
     }
 
 
