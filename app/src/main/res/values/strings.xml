@@ -2,6 +2,6 @@
     <string name="app_name">Chess timer</string>
 
     <string name="title_activity_main_process">MainProcess</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="timeUp">Time up!!!</string>
+    <string name="exit_query">Are you sure you want to exit?</string>
 </resources>

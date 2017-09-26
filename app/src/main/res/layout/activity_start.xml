@@ -51,4 +51,6 @@
         android:textAllCaps="false"
         android:layout_below="@id/twen"/>
 
+    <!--todo: include arbitrary time!-->
+
 </RelativeLayout>

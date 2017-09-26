@@ -117,9 +117,22 @@ public class SurgicalRoom extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                nextView.setText("Time up!!!");
-                vibrator.vibrate(3000);
-                //todo: fix the onClick() when timeIsUp
+                nextView.setText(R.string.timeUp);
+                vibrator.vibrate(3000); //Change vibrator pattern
+                nextView.setBackgroundColor(Color.GRAY);
+                textView.setBackgroundColor(Color.WHITE);
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+                nextView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
             }
         }.start();
     }
@@ -127,36 +140,35 @@ public class SurgicalRoom extends AppCompatActivity {
 
     public String convertLongToString(long number) {
 
-        String time = null;
+        String timeString = null;
 
         if (number >= 600) {
-            time = Long.toString(number / 60);
+            timeString = Long.toString(number / 60);
         } else if (number < 60) {
-            time = "00";
+            timeString = "00";
         } else if ((number >= 60) && (number < 600)) {
-            time = "0".concat(Long.toString(number / 60));
+            timeString = "0".concat(Long.toString(number / 60));
         }
 
-        String varii = null;
+        String secondHalfOfTime;
 
         if ((number % 60) < 10) {
-            varii = "0".concat(Long.toString(number % 60));
+            secondHalfOfTime = "0".concat(Long.toString(number % 60));
         } else {
-            varii = Long.toString(number % 60);
+            secondHalfOfTime = Long.toString(number % 60);
         }
 
-        time += (String.format(":%s", varii));
+        timeString += (String.format(":%s", secondHalfOfTime));
 
-        return time;
+        return timeString;
     }
 
 
-    public static long convertStringToLong(String time) {
-        long number = 0;
+    public static long convertStringToLong(String time){
 
         char[] all = time.toCharArray();
 
-        number = ((Long.parseLong(Character.toString(all[0])) * 10) + (Long.parseLong(Character.toString(all[1])))) * 60;
+        long number = ((Long.parseLong(Character.toString(all[0])) * 10) + (Long.parseLong(Character.toString(all[1])))) * 60;
         number += ((Long.parseLong(Character.toString(all[3])) * 10) + (Long.parseLong(Character.toString(all[4]))));
 
         return number;
@@ -166,7 +178,7 @@ public class SurgicalRoom extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setMessage("Are you sure you want to exit?")
+                .setMessage(R.string.exit_query)
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
