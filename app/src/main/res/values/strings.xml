@@ -3,5 +3,11 @@
 
     <string name="title_activity_main_process">MainProcess</string>
     <string name="timeUp">Time up!!!</string>
+    <string name="v">5 min</string>
+    <string name="x">10 min</string>
+    <string name="xv">15 min</string>
+    <string name="xx">20 min</string>
+    <string name="xxx">30 min</string>
+    <string name="choose">Other</string>
     <string name="exit_query">Are you sure you want to exit?</string>
 </resources>

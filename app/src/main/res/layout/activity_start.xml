@@ -4,53 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#666"
+    android:id="@+id/maam"
     tools:context="com.dabinu.apps.chesstimer.StartActivity">
 
     <Button
-        android:layout_width="match_parent"
+        android:id="@+id/five"
+        android:layout_width="100dp"
         android:layout_height="70dp"
-        android:text="Five"
-        android:textSize="20sp"
+        android:text="@string/v"
+        android:textStyle="italic"
         android:textAllCaps="false"
-        android:id="@+id/five"/>
+        android:textSize="20sp" />
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="70dp"
         android:id="@+id/ten"
-        android:text="Ten"
+        android:text="@string/x"
+        android:textStyle="italic"
         android:textSize="20sp"
         android:textAllCaps="false"
         android:layout_below="@id/five"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="70dp"
         android:id="@+id/fif"
-        android:text="Fifteen"
+        android:text="@string/xv"
+        android:textStyle="italic"
         android:textSize="20sp"
         android:textAllCaps="false"
         android:layout_below="@id/ten"/>
 
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="70dp"
         android:id="@+id/twen"
-        android:text="Twenty"
+        android:text="@string/xx"
+        android:textStyle="italic"
         android:textSize="20sp"
         android:textAllCaps="false"
         android:layout_below="@id/fif"/>
 
     <Button
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="70dp"
         android:id="@+id/thirt"
-        android:text="Thirty"
+        android:text="@string/xxx"
+        android:textStyle="italic"
         android:textSize="20sp"
         android:textAllCaps="false"
         android:layout_below="@id/twen"/>
 
-    <!--todo: include arbitrary time!-->
+    <Button
+        android:layout_width="350dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/thirt"
+        android:id="@+id/other"
+        android:text="@string/choose"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:textStyle="italic"/>
 
 </RelativeLayout>

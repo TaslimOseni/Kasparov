@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class SurgicalRoom extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class SurgicalRoom extends AppCompatActivity {
     CountDownTimer countDownTimer;
     Vibrator vibrator;
     ImageButton playpause, reset, stop;
+    LinearLayout noMansLand;
 
 
 /*  My onCreate method uses three other methods:
@@ -41,6 +43,7 @@ public class SurgicalRoom extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_surgical_room);
 
+        noMansLand = (LinearLayout) findViewById(R.id.noMansLand);
 
         String minutes = getIntent().getStringExtra("EXTRA");
 
@@ -62,8 +65,6 @@ public class SurgicalRoom extends AppCompatActivity {
         topText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Had to increase my min API to 21 to use the method below:
-                playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
                 theTextViewToggler(topText);
             }
         });
@@ -71,19 +72,9 @@ public class SurgicalRoom extends AppCompatActivity {
         bottomText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Had to increase my min API to 21 to use the method below:
-                playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
                 theTextViewToggler(bottomText);
             }
         });
-
-
-//        stop.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
 
     }
 
