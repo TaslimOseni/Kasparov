@@ -3,11 +3,16 @@
 
     <string name="title_activity_main_process">MainProcess</string>
     <string name="timeUp">Time up!!!</string>
-    <string name="v">5 min</string>
-    <string name="x">10 min</string>
-    <string name="xv">15 min</string>
-    <string name="xx">20 min</string>
-    <string name="xxx">30 min</string>
     <string name="choose">Other</string>
     <string name="exit_query">Are you sure you want to exit?</string>
+
+
+    <string-array name="time">
+        <item>5 min</item>
+        <item>10 min</item>
+        <item>15 min</item>
+        <item>20 min</item>
+        <item>25 min</item>
+        <item>30 min</item>
+    </string-array>
 </resources>

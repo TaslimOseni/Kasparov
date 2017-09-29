@@ -1,95 +1,65 @@
 package com.dabinu.apps.chesstimer;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RelativeLayout;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+
 
 public class StartActivity extends AppCompatActivity {
 
-    Button five, ten, fifteen, twenty, thirty, other;
-    RelativeLayout maam;
+    ListView list;
+    ArrayAdapter<CharSequence> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
-        five = (Button) findViewById(R.id.five);
-        ten = (Button) findViewById(R.id.ten);
-        fifteen = (Button) findViewById(R.id.fif);
-        twenty = (Button) findViewById(R.id.twen);
-        thirty = (Button) findViewById(R.id.thirt);
-        other = (Button) findViewById(R.id.other);
-        maam = (RelativeLayout) findViewById(R.id.maam);
+        final Intent toTheSurgicalrRoom = new Intent(this, SurgicalRoom.class);
 
+        list = (ListView) findViewById(R.id.listOfAll);
+        adapter = ArrayAdapter.createFromResource(this, R.array.time, android.R.layout.simple_spinner_item);
+        list.setAdapter(adapter);
 
-        //Intent to got to the main activity: Named it surgical activity.
-        final Intent intent = new Intent(this, SurgicalRoom.class);
-
-
-        //I set onClick listeners for EACH of the buttons (inefficient method, I know); passed a String through the intent.
-        five.setOnClickListener(new View.OnClickListener(){
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                String passed = Long.toString(1000 * 60 * 5);
-                intent.putExtra("EXTRA", passed);
-                startActivity(intent);
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
+                String passed = null;
+                switch(position){
+                    case 0:
+                        passed = Long.toString(1000 * 60 * 5);
+                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
+                        startActivity(toTheSurgicalrRoom);
+                        break;
+                    case 1:
+                        passed = Long.toString(1000 * 60 * 10);
+                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
+                        startActivity(toTheSurgicalrRoom);
+                        break;
+                    case 2:
+                        passed = Long.toString(1000 * 60 * 15);
+                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
+                        startActivity(toTheSurgicalrRoom);
+                        break;
+                    case 3:
+                        passed = Long.toString(1000 * 60 * 20);
+                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
+                        startActivity(toTheSurgicalrRoom);
+                        break;
+                    case 4:
+                        passed = Long.toString(1000 * 60 * 30);
+                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
+                        startActivity(toTheSurgicalrRoom);
+                        break;
+                }
             }
         });
 
-        ten.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String passed = Long.toString(1000 * 60 * 10);
-                intent.putExtra("EXTRA", passed);
-                startActivity(intent);
-            }
-        });
-
-        fifteen.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String passed = Long.toString(1000 * 60 * 15);
-                intent.putExtra("EXTRA", passed);
-                startActivity(intent);
-            }
-        });
-
-        twenty.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String passed = Long.toString(1000 * 60 * 20);
-                intent.putExtra("EXTRA", passed);
-                startActivity(intent);
-            }
-        });
-
-        thirty.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                String passed = Long.toString(1000 * 60 * 30);
-                intent.putExtra("EXTRA", passed);
-                startActivity(intent);
-            }
-        });
-
-        other.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText editText = new EditText(getApplicationContext());
-                editText.setLayoutParams(new LinearLayoutCompat.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-                editText.setBackgroundColor(Color.WHITE);
-                //todo: set a layout under that'd hold two spinners and one image view
-                maam.addView(editText);
-            }
-        });
 
     }
 

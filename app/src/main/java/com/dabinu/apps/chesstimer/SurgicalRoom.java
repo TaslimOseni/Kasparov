@@ -109,7 +109,8 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onFinish() {
                 nextView.setText(R.string.timeUp);
-                vibrator.vibrate(3000); //Change vibrator pattern
+                long pattern[] = {50,100,100,250,150,350};
+                vibrator.vibrate(pattern, 1);
                 nextView.setBackgroundColor(Color.GRAY);
                 textView.setBackgroundColor(Color.WHITE);
                 textView.setOnClickListener(new View.OnClickListener() {
