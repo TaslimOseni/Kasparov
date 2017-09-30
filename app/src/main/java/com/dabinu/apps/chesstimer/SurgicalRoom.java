@@ -79,11 +79,11 @@ public class SurgicalRoom extends AppCompatActivity {
 
         if (textView.getId() == R.id.top) {
             nextView = bottomText;
-        } else {
+            }
+        else{
             nextView = topText;
         }
 
-        countDownTimer = null;
 
         countDownTimer = new CountDownTimer(convertStringToLong(nextView.getText().toString()) * 1000, 1000) {
             @Override
@@ -103,8 +103,9 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onFinish() {
                 nextView.setText(R.string.timeUp);
-                long pattern[] = {50,100,100,250,150,350};
+                long pattern[] = {50,100,100};
                 vibrator.vibrate(pattern, 1);
+                //todo: Add my voice shouting time up!
                 nextView.setBackgroundColor(Color.GRAY);
                 textView.setBackgroundColor(Color.WHITE);
                 textView.setOnClickListener(new View.OnClickListener() {
