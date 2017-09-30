@@ -28,12 +28,6 @@ public class SurgicalRoom extends AppCompatActivity {
     LinearLayout noMansLand;
 
 
-/*  My onCreate method uses three other methods:
-    convertLongToString() takes a long value and converts it to String format (hh:mm)
-    convertStringToLong() takes a String value (hh:mm) and converts to a long value
-    theTextViewToggler() works based on onClick and toggles between the two textViews.
-    */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

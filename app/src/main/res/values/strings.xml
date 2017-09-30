@@ -3,7 +3,7 @@
 
     <string name="title_activity_main_process">MainProcess</string>
     <string name="timeUp">Time up!!!</string>
-    <string name="choose">Custom time: </string>
+    <string name="choose">CUSTOM TIME: </string>
     <string name="exit_query">Are you sure you want to exit?</string>
 
 
@@ -13,6 +13,7 @@
         <item>15 min</item>
         <item>20 min</item>
         <item>30 min</item>
+        <item>Other..</item>
     </string-array>
 
     <string-array name="hrs">
@@ -24,7 +25,6 @@
         <item>04</item>
         <item>05</item>
         <item>06</item>
-        <item>07</item>
 
 </string-array>
 

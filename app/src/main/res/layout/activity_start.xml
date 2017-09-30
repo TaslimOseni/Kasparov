@@ -4,51 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#f7d6a5"
     android:id="@+id/maam"
     tools:context="com.dabinu.apps.chesstimer.StartActivity">
 
     <ListView
+        android:id="@+id/listOfAll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listOfAll">
+        android:elevation="-20dp">
 
     </ListView>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_below="@+id/listOfAll"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listOfAll"
+        android:layout_marginEnd="10dp"
+        android:visibility="invisible"
+        android:id="@+id/other"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:background="#f3f1f1"
+        android:elevation="30dp"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="70dp"
             android:layout_marginStart="5dp"
             android:gravity="center"
+            android:textStyle="bold"
             android:text="@string/choose"
-            android:textColor="#9c6d45"
+            android:textColor="#815f28"
             android:textSize="25sp" />
 
-        <Spinner
-            android:id="@+id/hr"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"/>
-        <Spinner
-            android:layout_width="65dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
-            android:id="@+id/min" />
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/next"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:background="#fff"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="2dp">
+
+            <Spinner
+                android:id="@+id/hr"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="25dp" />
+
+            <Spinner
+                android:id="@+id/min"
+                android:layout_width="60dp"
+                android:spinnerMode="dropdown"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp" />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="80dp"
+                android:background="#f3f1f1"
+                android:id="@+id/goToNext"
+                android:src="@drawable/next" />
+        </LinearLayout>
     </LinearLayout>
+
 
 </RelativeLayout>
