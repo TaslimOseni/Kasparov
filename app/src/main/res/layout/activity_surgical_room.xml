@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/bottom"
         android:layout_below="@+id/top"
-        android:background="#5a3910"
+        android:background="#3c2509"
         android:orientation="horizontal">
 
         <ImageButton
@@ -31,8 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="65dp"
-            android:background="#5a3910"
+            android:layout_marginStart="65dp"
+            android:background="#3c2509"
             android:src="@drawable/tas_stop" />
 
         <ImageButton
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="65dp"
-            android:background="#5a3910"
+            android:background="#3c2509"
             android:scaleType="fitCenter"
             android:src="@drawable/tas_play" />
 
@@ -50,8 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginLeft="65dp"
-            android:background="#5a3910"
+            android:layout_marginStart="65dp"
+            android:background="#3c2509"
             android:src="@drawable/tas_reset" />
 
     </LinearLayout>

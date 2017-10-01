@@ -103,7 +103,7 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onFinish() {
                 nextView.setText(R.string.timeUp);
-                long pattern[] = {50,100,100};
+                long pattern[] = {50,10};
                 vibrator.vibrate(pattern, 1);
                 //todo: Add my voice shouting time up!
                 nextView.setBackgroundColor(Color.GRAY);
