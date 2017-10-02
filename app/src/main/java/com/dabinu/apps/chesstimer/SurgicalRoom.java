@@ -60,6 +60,7 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 theTextViewToggler(topText);
+                playpause.setImageDrawable(getDrawable(R.drawable.pause));
             }
         });
 
@@ -67,6 +68,7 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 theTextViewToggler(bottomText);
+                playpause.setImageDrawable(getDrawable(R.drawable.pause));
             }
         });
 
@@ -108,6 +110,20 @@ public class SurgicalRoom extends AppCompatActivity {
                 //todo: Add my voice shouting time up!
                 nextView.setBackgroundColor(Color.GRAY);
                 textView.setBackgroundColor(Color.WHITE);
+                stop.setImageDrawable(null);
+                stop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+                reset.setImageDrawable(null);
+                reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        
+                    }
+                });
                 textView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
