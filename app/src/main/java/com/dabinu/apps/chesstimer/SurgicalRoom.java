@@ -4,6 +4,7 @@ package com.dabinu.apps.chesstimer;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
@@ -26,6 +27,7 @@ public class SurgicalRoom extends AppCompatActivity {
     Vibrator vibrator;
     ImageButton playpause, reset, stop;
     LinearLayout noMansLand;
+    String minutes;
 
 
     @Override
@@ -39,7 +41,7 @@ public class SurgicalRoom extends AppCompatActivity {
 
         noMansLand = (LinearLayout) findViewById(R.id.noMansLand);
 
-        String minutes = getIntent().getStringExtra("EXTRA");
+        minutes = getIntent().getStringExtra("EXTRA");
 
         topText = (TextView) findViewById(R.id.top);
         bottomText = (TextView) findViewById(R.id.bottom);
@@ -48,6 +50,10 @@ public class SurgicalRoom extends AppCompatActivity {
         playpause = (ImageButton) findViewById(R.id.playPauseToggle);
         stop = (ImageButton) findViewById(R.id.stop);
         reset = (ImageButton) findViewById(R.id.reset);
+
+
+
+        playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
 
 
         topText.setText(convertLongToString(Long.parseLong(minutes) / 1000));
@@ -60,7 +66,9 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 theTextViewToggler(topText);
-                playpause.setImageDrawable(getDrawable(R.drawable.pause));
+                playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
+                stop.setImageDrawable(getDrawable(R.drawable.tas_stop));
+                reset.setImageDrawable(getDrawable(R.drawable.tas_reset));
             }
         });
 
@@ -68,7 +76,9 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 theTextViewToggler(bottomText);
-                playpause.setImageDrawable(getDrawable(R.drawable.pause));
+                playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
+                stop.setImageDrawable(getDrawable(R.drawable.tas_stop));
+                reset.setImageDrawable(getDrawable(R.drawable.tas_reset));
             }
         });
 
@@ -110,6 +120,15 @@ public class SurgicalRoom extends AppCompatActivity {
                 //todo: Add my voice shouting time up!
                 nextView.setBackgroundColor(Color.GRAY);
                 textView.setBackgroundColor(Color.WHITE);
+                playpause.setImageDrawable(getDrawable(R.drawable.tas_reset));
+                playpause.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getApplicationContext(), SurgicalRoom.class);
+                        intent.putExtra("EXTRA", minutes);
+                        startActivity(intent);
+                    }
+                });
                 stop.setImageDrawable(null);
                 stop.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -121,7 +140,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 reset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        
+
                     }
                 });
                 textView.setOnClickListener(new View.OnClickListener() {

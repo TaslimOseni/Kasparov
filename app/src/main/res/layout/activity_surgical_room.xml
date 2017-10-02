@@ -28,31 +28,28 @@
 
         <ImageButton
             android:id="@+id/stop"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="65dp"
-            android:background="#3c2509"
-            android:src="@drawable/tas_stop" />
+            android:background="#3c2509" />
 
         <ImageButton
             android:id="@+id/playPauseToggle"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="65dp"
             android:background="#3c2509"
-            android:scaleType="fitCenter"
-            android:src="@drawable/tas_play" />
+            android:scaleType="fitCenter" />
 
         <ImageButton
             android:id="@+id/reset"
-            android:layout_width="wrap_content"
+            android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="65dp"
-            android:background="#3c2509"
-            android:src="@drawable/tas_reset" />
+            android:background="#3c2509" />
 
     </LinearLayout>
 
