@@ -18,6 +18,7 @@ import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SurgicalRoom extends AppCompatActivity {
 
@@ -110,6 +111,7 @@ public class SurgicalRoom extends AppCompatActivity {
                         theTextViewToggler(nextView);
                     }
                 });
+
             }
 
             @Override
