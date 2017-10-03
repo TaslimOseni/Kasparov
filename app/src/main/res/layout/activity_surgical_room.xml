@@ -31,7 +31,7 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="65dp"
+            android:layout_marginStart="50dp"
             android:background="#3c2509" />
 
         <ImageButton
