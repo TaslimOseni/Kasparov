@@ -43,7 +43,6 @@ public class StartActivity extends AppCompatActivity {
         minAdapter.setDropDownViewResource(R.layout.theinnerlayout);
         hr.setAdapter(hrAdapter);
         min.setAdapter(minAdapter);
-        min.setDropDownVerticalOffset(2);
 
 
         final Intent toTheSurgicalrRoom = new Intent(this, SurgicalRoom.class);
