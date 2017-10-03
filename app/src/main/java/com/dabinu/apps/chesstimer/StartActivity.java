@@ -1,6 +1,7 @@
 package com.dabinu.apps.chesstimer;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,8 +39,11 @@ public class StartActivity extends AppCompatActivity {
         other = (LinearLayout) findViewById(R.id.other);
         hrAdapter = ArrayAdapter.createFromResource(this, R.array.hrs, R.layout.timespinner);
         minAdapter = ArrayAdapter.createFromResource(this, R.array.mn, R.layout.timespinner);
+        hrAdapter.setDropDownViewResource(R.layout.theinnerlayout);
+        minAdapter.setDropDownViewResource(R.layout.theinnerlayout);
         hr.setAdapter(hrAdapter);
         min.setAdapter(minAdapter);
+        min.setDropDownVerticalOffset(2);
 
 
         final Intent toTheSurgicalrRoom = new Intent(this, SurgicalRoom.class);
