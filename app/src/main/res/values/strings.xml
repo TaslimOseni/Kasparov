@@ -5,6 +5,8 @@
     <string name="timeUp">Time up!!!</string>
     <string name="choose">CUSTOM TIME: </string>
     <string name="exit_query">Are you sure you want to exit?</string>
+    <string name="stop_query">Stop timer?</string>
+    <string name="startUninitialized">Tap any of the surfaces to start</string>
 
 
     <string-array name="time">

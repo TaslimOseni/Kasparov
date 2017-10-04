@@ -29,6 +29,7 @@ public class SurgicalRoom extends AppCompatActivity {
     ImageButton playpause, reset, stop;
     LinearLayout noMansLand;
     String minutes;
+    boolean isStarted;
 
 
     @Override
@@ -39,6 +40,9 @@ public class SurgicalRoom extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         setContentView(R.layout.activity_surgical_room);
+
+        isStarted = false;
+
 
         noMansLand = (LinearLayout) findViewById(R.id.noMansLand);
 
@@ -52,6 +56,14 @@ public class SurgicalRoom extends AppCompatActivity {
         stop = (ImageButton) findViewById(R.id.stop);
         reset = (ImageButton) findViewById(R.id.reset);
 
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isStarted){
+                    Toast.makeText(getApplicationContext(), R.string.startUninitialized, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
 
         playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
@@ -83,6 +95,7 @@ public class SurgicalRoom extends AppCompatActivity {
             }
         });
 
+
     }
 
 
@@ -104,6 +117,12 @@ public class SurgicalRoom extends AppCompatActivity {
                 nextView.setText(convertLongToString(l / 1000));
                 nextView.setBackgroundColor(Color.GREEN);
                 textView.setBackgroundColor(Color.RED);
+                stop.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onStopPressed();
+                    }
+                });
                 nextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -200,7 +219,7 @@ public class SurgicalRoom extends AppCompatActivity {
 
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed(){
         new AlertDialog.Builder(this)
                 .setMessage(R.string.exit_query)
                 .setCancelable(false)
@@ -213,5 +232,18 @@ public class SurgicalRoom extends AppCompatActivity {
                 .show();
     }
 
+
+    public void onStopPressed(){
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.stop_query)
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        SurgicalRoom.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
 
 }
