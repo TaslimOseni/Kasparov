@@ -56,10 +56,10 @@ public class SurgicalRoom extends AppCompatActivity {
         stop = (ImageButton) findViewById(R.id.stop);
         reset = (ImageButton) findViewById(R.id.reset);
 
-        stop.setOnClickListener(new View.OnClickListener() {
+        playpause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isStarted){
+                if(!isStarted){
                     Toast.makeText(getApplicationContext(), R.string.startUninitialized, Toast.LENGTH_LONG).show();
                 }
             }
@@ -82,6 +82,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
                 stop.setImageDrawable(getDrawable(R.drawable.tas_stop));
                 reset.setImageDrawable(getDrawable(R.drawable.tas_reset));
+                isStarted = true;
             }
         });
 
@@ -92,6 +93,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
                 stop.setImageDrawable(getDrawable(R.drawable.tas_stop));
                 reset.setImageDrawable(getDrawable(R.drawable.tas_reset));
+                isStarted = true;
             }
         });
 
@@ -121,6 +123,14 @@ public class SurgicalRoom extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         onStopPressed();
+                    }
+                });
+                reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(getApplicationContext(), SurgicalRoom.class);
+                        intent.putExtra("EXTRA", minutes);
+                        startActivity(intent);
                     }
                 });
                 nextView.setOnClickListener(new View.OnClickListener() {
@@ -220,16 +230,21 @@ public class SurgicalRoom extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        new AlertDialog.Builder(this)
-                .setMessage(R.string.exit_query)
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        SurgicalRoom.super.onBackPressed();
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
+        if(!isStarted){
+            SurgicalRoom.super.onBackPressed();
+        }
+        else{
+            new AlertDialog.Builder(this)
+                    .setMessage(R.string.exit_query)
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            SurgicalRoom.super.onBackPressed();
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        }
     }
 
 
