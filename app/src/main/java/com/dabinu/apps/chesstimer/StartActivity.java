@@ -37,8 +37,8 @@ public class StartActivity extends AppCompatActivity {
         min = (Spinner) findViewById(R.id.min);
         go = (ImageButton) findViewById(R.id.goToNext);
         other = (LinearLayout) findViewById(R.id.other);
-        hrAdapter = ArrayAdapter.createFromResource(this, R.array.hrs, R.layout.timespinner);
-        minAdapter = ArrayAdapter.createFromResource(this, R.array.mn, R.layout.timespinner);
+        hrAdapter = ArrayAdapter.createFromResource(this, R.array.hrs, R.layout.spinnerheader);
+        minAdapter = ArrayAdapter.createFromResource(this, R.array.mn, R.layout.spinnerheader);
         hrAdapter.setDropDownViewResource(R.layout.theinnerlayout);
         minAdapter.setDropDownViewResource(R.layout.theinnerlayout);
         hr.setAdapter(hrAdapter);

@@ -115,7 +115,7 @@ public class SurgicalRoom extends AppCompatActivity {
             }
 
             @Override
-            public void onFinish() {
+            public void onFinish(){
                 nextView.setText(R.string.timeUp);
                 long pattern[] = {50,10};
                 vibrator.vibrate(pattern, 1);
