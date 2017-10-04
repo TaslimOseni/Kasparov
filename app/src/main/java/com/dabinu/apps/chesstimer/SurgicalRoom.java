@@ -133,11 +133,26 @@ public class SurgicalRoom extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
+
                 nextView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         countDownTimer.cancel();
                         theTextViewToggler(nextView);
+                    }
+                });
+                playpause.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(playpause.getDrawable() == getDrawable(R.drawable.tas_pause) && isStarted){
+                            Toast.makeText(getApplicationContext(), "sdgsd", Toast.LENGTH_LONG).show();
+                        }
                     }
                 });
 
@@ -146,7 +161,7 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onFinish(){
                 nextView.setText(R.string.timeUp);
-                long pattern[] = {50,10};
+                long pattern[] = {50,100, 50, 100};
                 vibrator.vibrate(pattern, 1);
                 //todo: Add my voice shouting time up!
                 nextView.setBackgroundColor(Color.GRAY);
