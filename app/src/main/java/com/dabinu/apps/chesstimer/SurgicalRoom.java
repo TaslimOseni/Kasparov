@@ -246,7 +246,8 @@ public class SurgicalRoom extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         if(!isStarted){
-            SurgicalRoom.super.onBackPressed();
+            Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+            startActivity(intent);
         }
         else{
             new AlertDialog.Builder(this)
@@ -254,7 +255,8 @@ public class SurgicalRoom extends AppCompatActivity {
                     .setCancelable(false)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            SurgicalRoom.super.onBackPressed();
+                            Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                            startActivity(intent);
                         }
                     })
                     .setNegativeButton("No", null)
