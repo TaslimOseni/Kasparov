@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
@@ -66,7 +67,7 @@ public class SurgicalRoom extends AppCompatActivity {
         });
 
 
-        playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
+        playpause.setImageDrawable(getResources().getDrawable(R.drawable.tas_play));
 
 
         topText.setText(convertLongToString(Long.parseLong(minutes) / 1000));
@@ -79,9 +80,9 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 theTextViewToggler(topText);
-                playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
-                stop.setImageDrawable(getDrawable(R.drawable.tas_stop));
-                reset.setImageDrawable(getDrawable(R.drawable.tas_reset));
+                playpause.setImageDrawable(getResources().getDrawable(R.drawable.tas_pause));
+                stop.setImageDrawable(getResources().getDrawable(R.drawable.tas_stop));
+                reset.setImageDrawable(getResources().getDrawable(R.drawable.tas_reset));
                 isStarted = true;
             }
         });
@@ -90,9 +91,9 @@ public class SurgicalRoom extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 theTextViewToggler(bottomText);
-                playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
-                stop.setImageDrawable(getDrawable(R.drawable.tas_stop));
-                reset.setImageDrawable(getDrawable(R.drawable.tas_reset));
+                playpause.setImageDrawable(getResources().getDrawable(R.drawable.tas_pause));
+                stop.setImageDrawable(getResources().getDrawable(R.drawable.tas_stop));
+                reset.setImageDrawable(getResources().getDrawable(R.drawable.tas_reset));
                 isStarted = true;
             }
         });
@@ -151,7 +152,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 playpause.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(playpause.getDrawable() == getDrawable(R.drawable.tas_pause) && isStarted){
+                        if(playpause.getDrawable() == getResources().getDrawable(R.drawable.tas_pause) && isStarted){
                             Toast.makeText(getApplicationContext(), "sdgsd", Toast.LENGTH_LONG).show();
                         }
                     }
@@ -167,7 +168,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 //todo: Add my voice shouting time up!
                 nextView.setBackgroundColor(Color.GRAY);
                 textView.setBackgroundColor(Color.WHITE);
-                playpause.setImageDrawable(getDrawable(R.drawable.tas_reset));
+                playpause.setImageDrawable(getResources().getDrawable(R.drawable.tas_reset));
                 playpause.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
