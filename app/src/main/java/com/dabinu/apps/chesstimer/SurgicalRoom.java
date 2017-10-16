@@ -127,7 +127,8 @@ public class SurgicalRoom extends AppCompatActivity {
                 });
                 reset.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View view) {
+                    public void onClick(View view){
+                        countDownTimer.cancel();
                         Intent intent = new Intent(getApplicationContext(), SurgicalRoom.class);
                         intent.putExtra("EXTRA", minutes);
                         startActivity(intent);
@@ -253,8 +254,9 @@ public class SurgicalRoom extends AppCompatActivity {
             new AlertDialog.Builder(this)
                     .setMessage(R.string.exit_query)
                     .setCancelable(false)
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                        public void onClick(DialogInterface dialog, int id){
+                            countDownTimer.cancel();
                             Intent intent = new Intent(getApplicationContext(), StartActivity.class);
                             startActivity(intent);
                         }
@@ -270,7 +272,8 @@ public class SurgicalRoom extends AppCompatActivity {
                 .setMessage(R.string.stop_query)
                 .setCancelable(false)
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
+                    public void onClick(DialogInterface dialog, int id){
+                        countDownTimer.cancel();
                         SurgicalRoom.super.onBackPressed();
                     }
                 })
