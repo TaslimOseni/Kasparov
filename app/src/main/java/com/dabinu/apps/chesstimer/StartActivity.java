@@ -2,7 +2,6 @@ package com.dabinu.apps.chesstimer;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,12 +19,12 @@ public class StartActivity extends AppCompatActivity {
 
     ListView list;
     ArrayAdapter<CharSequence> adapter;
-    Spinner hr, min;
-    ArrayAdapter<CharSequence> hrAdapter, minAdapter;
+    Spinner min;
+    ArrayAdapter<CharSequence> minAdapter;
     LinearLayout other;
     ImageButton go;
     boolean isOtherOnClick = false;
-    long hourCalc, minuteCalc;
+    long minuteCalc;
     String passed;
 
 
@@ -34,23 +33,20 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
 
+        overridePendingTransition(0, 0);
 
-        hr = (Spinner) findViewById(R.id.hr);
         min = (Spinner) findViewById(R.id.min);
         go = (ImageButton) findViewById(R.id.goToNext);
         other = (LinearLayout) findViewById(R.id.other);
-        hrAdapter = ArrayAdapter.createFromResource(this, R.array.hrs, R.layout.spinnerheader);
         minAdapter = ArrayAdapter.createFromResource(this, R.array.mn, R.layout.spinnerheader);
-        hrAdapter.setDropDownViewResource(R.layout.theinnerlayout);
-        minAdapter.setDropDownViewResource(R.layout.theinnerlayout);
-        hr.setAdapter(hrAdapter);
+        minAdapter.setDropDownViewResource(R.layout.spinnercontent);
         min.setAdapter(minAdapter);
 
 
         final Intent toTheSurgicalrRoom = new Intent(this, SurgicalRoom.class);
 
         list = (ListView) findViewById(R.id.listOfAll);
-        adapter = ArrayAdapter.createFromResource(this, R.array.time, R.layout.listitemmock);
+        adapter = ArrayAdapter.createFromResource(this, R.array.time, R.layout.forthelistview);
         list.setAdapter(adapter);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -96,16 +92,6 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        hr.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                hourCalc = adapterView.getItemIdAtPosition(i) - 1;
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
 
 
         min.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -122,14 +108,11 @@ public class StartActivity extends AppCompatActivity {
         go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if((hourCalc == -1) || (minuteCalc == -1)){
+                if(minuteCalc == -1){
                     Toast.makeText(getApplicationContext(), "Select a valid time", Toast.LENGTH_LONG).show();
                 }
-                else if((hourCalc == 0) && (minuteCalc == 0)){
-                    Toast.makeText(getApplicationContext(), "Inaccurate time", Toast.LENGTH_LONG).show();
-                }
                 else{
-                    passed = Long.toString(1000 * 60 * ((hourCalc * 60) + minuteCalc));
+                    passed = Long.toString(1000 * 60 * (minuteCalc + 1));
                     toTheSurgicalrRoom.putExtra("EXTRA", passed);
                     startActivity(toTheSurgicalrRoom);
                 }

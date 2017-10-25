@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
@@ -30,12 +29,13 @@ public class SurgicalRoom extends AppCompatActivity {
     ImageButton playpause, reset, stop;
     LinearLayout noMansLand;
     String minutes;
-    boolean isStarted;
+    boolean isStarted, startFromTop;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0, 0);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         ActionBar actionBar = getSupportActionBar();
@@ -129,10 +129,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 reset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view){
-                        countDownTimer.cancel();
-                        Intent intent = new Intent(getApplicationContext(), SurgicalRoom.class);
-                        intent.putExtra("EXTRA", minutes);
-                        startActivity(intent);
+                        onResetPressed();
                     }
                 });
                 textView.setOnClickListener(new View.OnClickListener() {
@@ -149,22 +146,28 @@ public class SurgicalRoom extends AppCompatActivity {
                         theTextViewToggler(nextView);
                     }
                 });
-                playpause.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        if(playpause.getDrawable() == getResources().getDrawable(R.drawable.tas_pause) && isStarted){
-                            Toast.makeText(getApplicationContext(), "sdgsd", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
+//                playpause.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        if(playpause.getDrawable().getConstantState() == getResources().getDrawable(R.drawable.tas_pause).getConstantState() && isStarted){
+//                            if(topText.getBackground() == getDrawable(Color.GREEN)){
+//                                countDownTimer.cancel();
+//                                startFromTop = true;
+//                            }
+//
+//                        }
+//                        else{
+//                            Toast.makeText(getApplicationContext(), "nooooo", Toast.LENGTH_LONG).show();
+//                        }
+//                    }
+//                });
 
             }
 
             @Override
             public void onFinish(){
                 nextView.setText(R.string.timeUp);
-                long pattern[] = {50,100, 50, 100};
-                vibrator.vibrate(pattern, 1);
+                vibrator.vibrate(1000);
                 //todo: Add my voice shouting time up!
                 nextView.setBackgroundColor(Color.GRAY);
                 textView.setBackgroundColor(Color.WHITE);
@@ -276,6 +279,23 @@ public class SurgicalRoom extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id){
                         countDownTimer.cancel();
                         SurgicalRoom.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+
+    public void onResetPressed(){
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.reset_query)
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id){
+                        countDownTimer.cancel();
+                        Intent intent = new Intent(getApplicationContext(), SurgicalRoom.class);
+                        intent.putExtra("EXTRA", minutes);
+                        startActivity(intent);
                     }
                 })
                 .setNegativeButton("No", null)
