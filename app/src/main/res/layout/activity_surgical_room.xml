@@ -15,6 +15,7 @@
         android:layout_alignParentTop="true"
         android:gravity="center"
         android:rotation="180"
+        android:textColor="@android:color/darker_gray"
         android:textSize="50sp" />
 
     <LinearLayout
@@ -58,6 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:layout_alignParentBottom="true"
+        android:textColor="@android:color/darker_gray"
         android:layout_alignParentStart="true"
         android:gravity="center"
         android:textSize="50sp" />
