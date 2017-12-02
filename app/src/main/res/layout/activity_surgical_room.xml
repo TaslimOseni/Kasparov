@@ -41,7 +41,10 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="50dp"
+            android:scaleType="fitCenter"
+            android:layout_toStartOf="@+id/playPauseToggle"
+            android:layout_marginEnd="40dp"
+            android:layout_centerInParent="true"
             android:background="#3c2509" />
 
         <ImageButton
@@ -58,7 +61,10 @@
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="65dp"
+            android:scaleType="fitCenter"
+            android:layout_toEndOf="@+id/playPauseToggle"
+            android:layout_marginStart="40dp"
+            android:layout_centerInParent="true"
             android:background="#3c2509" />
 
     </RelativeLayout>

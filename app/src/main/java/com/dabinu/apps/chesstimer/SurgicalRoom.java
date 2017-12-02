@@ -17,6 +17,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ public class SurgicalRoom extends AppCompatActivity {
     CountDownTimer countDownTimer;
     Vibrator vibrator;
     ImageButton playpause, reset, stop;
-    LinearLayout noMansLand;
+    RelativeLayout noMansLand;
     String minutes;
     boolean isStarted = false, startFromTop = false;
 
