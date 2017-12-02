@@ -21,20 +21,20 @@ public class AboutUs extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
-        listView = (ListView) findViewById(R.id.connectifyGuy);
-        lipsGuyFillIn = ArrayAdapter.createFromResource(this, R.array.conny, R.layout.forthelistview);
-        listView.setAdapter(lipsGuyFillIn);
-
-        listView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        listView = (ListView) findViewById(R.id.connectifyGuy);
+//        lipsGuyFillIn = ArrayAdapter.createFromResource(this, R.array.conny, R.layout.forthelistview);
+//        listView.setAdapter(lipsGuyFillIn);
+//
+//        listView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
     }
 }
