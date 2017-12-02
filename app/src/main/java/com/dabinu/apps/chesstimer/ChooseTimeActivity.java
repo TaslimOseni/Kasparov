@@ -1,8 +1,8 @@
 package com.dabinu.apps.chesstimer;
 
-import android.content.DialogInterface;
+
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,40 +15,51 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
-public class StartActivity extends AppCompatActivity {
+public class ChooseTimeActivity extends AppCompatActivity {
 
     ListView list;
     ArrayAdapter<CharSequence> adapter;
     Spinner min;
     ArrayAdapter<CharSequence> minAdapter;
     LinearLayout other;
-    ImageButton go;
+    ImageButton go, aboutUs;
     boolean isOtherOnClick = false;
     long minuteCalc;
     String passed;
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
+        setContentView(R.layout.choose_time);
 
         overridePendingTransition(0, 0);
 
-        min = (Spinner) findViewById(R.id.min);
-        go = (ImageButton) findViewById(R.id.goToNext);
-        other = (LinearLayout) findViewById(R.id.other);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+        min = findViewById(R.id.min);
+        go = findViewById(R.id.goToNext);
+        other = findViewById(R.id.other);
+        aboutUs = findViewById(R.id.aboutUs);
         minAdapter = ArrayAdapter.createFromResource(this, R.array.mn, R.layout.spinnerheader);
         minAdapter.setDropDownViewResource(R.layout.spinnercontent);
         min.setAdapter(minAdapter);
 
+        final Intent toAbout = new Intent(this, AboutUs.class);
+        aboutUs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toAbout);
+            }
+        });
 
         final Intent toTheSurgicalrRoom = new Intent(this, SurgicalRoom.class);
 
-        list = (ListView) findViewById(R.id.listOfAll);
+        list = findViewById(R.id.listOfAll);
         adapter = ArrayAdapter.createFromResource(this, R.array.time, R.layout.forthelistview);
         list.setAdapter(adapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
                 switch(position){
@@ -123,20 +134,11 @@ public class StartActivity extends AppCompatActivity {
 
     }
 
+
+
     @Override
     public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setMessage("Are you sure you want to exit?")
-                .setCancelable(true)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
-                    public void onClick(DialogInterface dialog, int id) {
-                        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
-                        homeIntent.addCategory( Intent.CATEGORY_HOME );
-                        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(homeIntent);
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
+        Intent inte = new Intent(this, GameType.class);
+        startActivity(inte);
     }
 }

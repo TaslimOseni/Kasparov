@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.dabinu.apps.chesstimer.AboutUs"
+    android:background="#f7d6a5">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:elevation="30dp"
+        android:id="@+id/header"
+        android:background="#3c2509">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="About us"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:id="@+id/connectifyGuy"
+        android:layout_centerInParent="true">
+
+    </ListView>
+    <!---->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:layout_below="@+id/header"-->
+        <!--android:id="@+id/git">-->
+        <!---->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="GitHub"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:layout_marginStart="20dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:textSize="25sp"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="www.github.com/TaslimOseni"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_marginTop="50dp"-->
+            <!--android:layout_marginEnd="20dp"-->
+            <!--android:textSize="20sp"/>-->
+
+    <!--</RelativeLayout>-->
+
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_below="@+id/git"-->
+        <!--android:id="@+id/linker">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:text="LinkedIn"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:layout_marginStart="20dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:textSize="25sp"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:text="www.linkedin.com/Taslim.Oseni"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_marginEnd="20dp"-->
+            <!--android:textSize="20sp"/>-->
+
+    <!--</RelativeLayout>-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:layout_below="@+id/linker"-->
+        <!--android:id="@+id/mail">-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:text="E-mail"-->
+            <!--android:textAllCaps="false"-->
+            <!--android:layout_marginStart="20dp"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--android:textSize="25sp"/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:text="tasleemoseni@gmail.com"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_marginEnd="20dp"-->
+            <!--android:textSize="20sp"/>-->
+
+    <!--</RelativeLayout>-->
+</RelativeLayout>

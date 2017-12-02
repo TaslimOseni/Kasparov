@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Chess timer</string>
+    <string name="app_name">The clicker</string>
 
     <string name="title_activity_main_process">MainProcess</string>
     <string name="timeUp">Time up!!!</string>
@@ -9,6 +9,12 @@
     <string name="stop_query">Stop timer?</string>
     <string name="startUninitialized">Tap any of the surfaces to start</string>
 
+
+    <string-array name="conny">
+        <item>GitHub</item>
+        <item>LinkedIn</item>
+        <item>E-mail</item>
+    </string-array>
 
     <string-array name="time">
         <item>5 min</item>
@@ -122,5 +128,8 @@
         <item>98</item>
         <item>99</item>
     </string-array>
+    <string name="title_activity_five_second_man">FiveSecondMan</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
 
 </resources>

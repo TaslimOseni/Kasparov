@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
@@ -46,18 +45,16 @@ public class SurgicalRoom extends AppCompatActivity {
         actionBar.hide();
         setContentView(R.layout.activity_surgical_room);
 
-
-        noMansLand = (LinearLayout) findViewById(R.id.noMansLand);
-
         minutes = getIntent().getStringExtra("EXTRA");
 
-        topText = (TextView) findViewById(R.id.top);
-        bottomText = (TextView) findViewById(R.id.bottom);
+        noMansLand = findViewById(R.id.noMansLand);
+        topText = findViewById(R.id.top);
+        bottomText = findViewById(R.id.bottom);
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        playpause = findViewById(R.id.playPauseToggle);
+        stop = findViewById(R.id.stop);
+        reset = findViewById(R.id.reset);
 
-        playpause = (ImageButton) findViewById(R.id.playPauseToggle);
-        stop = (ImageButton) findViewById(R.id.stop);
-        reset = (ImageButton) findViewById(R.id.reset);
 
         playpause.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -121,7 +118,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 nextView.setBackgroundColor(Color.GREEN);
                 textView.setBackgroundColor(Color.RED);
 
-                stop.setOnClickListener(new View.OnClickListener() {
+                stop.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view) {
                         onStopPressed();
@@ -135,16 +132,16 @@ public class SurgicalRoom extends AppCompatActivity {
                     }
                 });
 
-                textView.setOnClickListener(new View.OnClickListener() {
+                textView.setOnClickListener(new View.OnClickListener(){
                     @Override
-                    public void onClick(View view) {
+                    public void onClick(View view){
                         //Do nothing!
                     }
                 });
 
-                nextView.setOnClickListener(new View.OnClickListener() {
+                nextView.setOnClickListener(new View.OnClickListener(){
                     @Override
-                    public void onClick(View view) {
+                    public void onClick(View view){
                         countDownTimer.cancel();
                         theTextViewToggler(nextView);
                     }
@@ -153,7 +150,7 @@ public class SurgicalRoom extends AppCompatActivity {
 
                 playpause.setOnClickListener(new View.OnClickListener(){
                     @Override
-                    public void onClick(View view) {
+                    public void onClick(View view){
                         if(playpause.getDrawable().getConstantState() == getResources().getDrawable(R.drawable.tas_pause).getConstantState() && isStarted){
 
                             if(topText.getCurrentTextColor() == Color.BLACK){
@@ -283,7 +280,7 @@ public class SurgicalRoom extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         if(!isStarted){
-            Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ChooseTimeActivity.class);
             startActivity(intent);
         }
         else{
@@ -294,7 +291,7 @@ public class SurgicalRoom extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface dialog, int id){
                                 countDownTimer.cancel();
-                                Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), ChooseTimeActivity.class);
                                 startActivity(intent);
                             }
                         })
@@ -309,7 +306,7 @@ public class SurgicalRoom extends AppCompatActivity {
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener(){
                             public void onClick(DialogInterface dialog, int id){
                                 countDownTimer.cancel();
-                                Intent intent = new Intent(getApplicationContext(), StartActivity.class);
+                                Intent intent = new Intent(getApplicationContext(), ChooseTimeActivity.class);
                                 startActivity(intent);
                             }
                         })
