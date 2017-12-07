@@ -2,6 +2,7 @@ package com.dabinu.apps.chesstimer;
 
 
 import android.content.Intent;
+import android.os.CountDownTimer;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class ChooseTimeActivity extends AppCompatActivity {
     boolean isOtherOnClick = false;
     long minuteCalc;
     String passed;
+    int exitCount = 0;
 
 
     @Override
@@ -137,8 +139,27 @@ public class ChooseTimeActivity extends AppCompatActivity {
 
 
     @Override
-    public void onBackPressed() {
-        Intent inte = new Intent(this, GameType.class);
-        startActivity(inte);
-    }
+    public void onBackPressed(){
+            exitCount++;
+
+            switch(exitCount){
+                case 1:
+                    Toast.makeText(this, "Press back again to exit", Toast.LENGTH_LONG).show();
+                    CountDownTimer cdt = new CountDownTimer(3000, 1000){
+                        @Override
+                        public void onTick(long millisUntilFinished){
+                        }
+
+                        @Override
+                        public void onFinish(){
+                            exitCount = 0;
+                        }
+                    }.start();
+                    break;
+                case 2:
+                    startActivity(new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+
+            }
+        }
+
 }

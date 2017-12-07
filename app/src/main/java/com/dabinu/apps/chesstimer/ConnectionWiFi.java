@@ -57,6 +57,8 @@ public class ConnectionWiFi extends Activity{
 //                    ProgressDialog progressDialog = new ProgressDialog(theBloodyContextThatHasBeenGivingMeWahala);
 
                 }
+
+
                 AlertDialog.Builder alert3 = new AlertDialog.Builder(theBloodyContextThatHasBeenGivingMeWahala);
                 alert3.setMessage("Searching for nearby connection");
                 alert3.show();
