@@ -401,4 +401,17 @@ public class SurgicalRoom extends AppCompatActivity {
 
     }
 
+
+    @Override
+    protected void onPause(){
+        onStopPressed();
+        super.onPause();
+    }
+
+
+    @Override
+    protected void onStop() {
+        onStopPressed();
+        super.onStop();
+    }
 }
