@@ -1,11 +1,17 @@
 <resources>
-    <string name="app_name">The clicker</string>
+    <string name="app_name">The Clicker</string>
 
     <string name="title_activity_main_process">MainProcess</string>
     <string name="timeUp">Time up!!!</string>
     <string name="choose">CUSTOM TIME: </string>
     <string name="exit_query">Abort?</string>
     <string name="reset_query">Reset?</string>
+    <string name="author_name">Taslim Oseni</string>
+    <string name="stop_button">stop_button</string>
+    <string name="play_button">play_button</string>
+    <string name="reset_button">reset_button</string>
+    <string name="move_to_next_activity">move_to_next_Activity</string>
+    <string name="about">about us</string>
     <string name="stop_query">Stop timer?</string>
     <string name="startUninitialized">Tap any of the surfaces to start</string>
 

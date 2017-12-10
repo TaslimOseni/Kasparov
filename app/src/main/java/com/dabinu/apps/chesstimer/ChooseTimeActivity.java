@@ -19,14 +19,12 @@ import android.widget.Toast;
 public class ChooseTimeActivity extends AppCompatActivity {
 
     ListView list;
-    ArrayAdapter<CharSequence> adapter;
     Spinner min;
     ArrayAdapter<CharSequence> minAdapter;
     LinearLayout other;
     ImageButton go, aboutUs;
     boolean isOtherOnClick = false;
     long minuteCalc;
-    String passed;
     int exitCount = 0;
 
 
@@ -56,50 +54,25 @@ public class ChooseTimeActivity extends AppCompatActivity {
             }
         });
 
-        final Intent toTheSurgicalrRoom = new Intent(this, SurgicalRoom.class);
+        final Intent toTheSurgicalRoom = new Intent(this, SurgicalRoom.class);
 
         list = findViewById(R.id.listOfAll);
-        adapter = ArrayAdapter.createFromResource(this, R.array.time, R.layout.forthelistview);
-        list.setAdapter(adapter);
+        list.setAdapter(ArrayAdapter.createFromResource(this, R.array.time, R.layout.forthelistview));
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l){
+
                 switch(position){
                     case 0:
-                        passed = Long.toString(1000 * 60 * 5);
-                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
-                        startActivity(toTheSurgicalrRoom);
-                        break;
                     case 1:
-                        passed = Long.toString(1000 * 60 * 10);
-                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
-                        startActivity(toTheSurgicalrRoom);
-                        break;
                     case 2:
-                        passed = Long.toString(1000 * 60 * 15);
-                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
-                        startActivity(toTheSurgicalrRoom);
-                        break;
                     case 3:
-                        passed = Long.toString(1000 * 60 * 20);
-                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
-                        startActivity(toTheSurgicalrRoom);
-                        break;
                     case 4:
-                        passed = Long.toString(1000 * 60 * 30);
-                        toTheSurgicalrRoom.putExtra("EXTRA", passed);
-                        startActivity(toTheSurgicalrRoom);
+                        startActivity(toTheSurgicalRoom.putExtra("EXTRA", Long.toString(1000 * 60 * ((position + 1) * 5))));
                         break;
                     case 5:
-                        if(isOtherOnClick){
-                            other.setVisibility(View.INVISIBLE);
-                            isOtherOnClick = false;
-                        }
-                        else{
-                            other.setVisibility(View.VISIBLE);
-                            isOtherOnClick = true;
-                        }
-
+                        other.setVisibility((isOtherOnClick ? View.GONE : View.VISIBLE));
+                        isOtherOnClick = !isOtherOnClick;
                         break;
                 }
             }
@@ -125,14 +98,10 @@ public class ChooseTimeActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Select a valid time", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    passed = Long.toString(1000 * 60 * (minuteCalc + 1));
-                    toTheSurgicalrRoom.putExtra("EXTRA", passed);
-                    startActivity(toTheSurgicalrRoom);
+                    startActivity(toTheSurgicalRoom.putExtra("EXTRA", Long.toString(1000 * 60 * (minuteCalc + 1))));
                 }
             }
         });
-
-
 
     }
 
@@ -145,7 +114,7 @@ public class ChooseTimeActivity extends AppCompatActivity {
             switch(exitCount){
                 case 1:
                     Toast.makeText(this, "Press back again to exit", Toast.LENGTH_LONG).show();
-                    CountDownTimer cdt = new CountDownTimer(3000, 1000){
+                    new CountDownTimer(3000, 1000){
                         @Override
                         public void onTick(long millisUntilFinished){
                         }

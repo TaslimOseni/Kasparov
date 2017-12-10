@@ -21,7 +21,6 @@
         </activity>
         <activity android:name=".SurgicalRoom" />
         <activity android:name=".AboutUs" />
-        <activity android:name=".GameType" />
     </application>
 
 </manifest>

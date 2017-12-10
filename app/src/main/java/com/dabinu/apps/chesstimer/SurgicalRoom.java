@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,14 +34,13 @@ public class SurgicalRoom extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         overridePendingTransition(0, 0);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_surgical_room);
 
         minutes = getIntent().getStringExtra("EXTRA");
@@ -79,14 +76,14 @@ public class SurgicalRoom extends AppCompatActivity {
         topText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                theTextViewToggler(topText);
+                toggler(topText);
             }
         });
 
         bottomText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                theTextViewToggler(bottomText);
+                toggler(bottomText);
             }
         });
 
@@ -94,20 +91,12 @@ public class SurgicalRoom extends AppCompatActivity {
     }
 
 
-    public void theTextViewToggler(final TextView textView){
-        final TextView nextView;
-
-        if(textView.getId() == R.id.top){
-            nextView = bottomText;
-            }
-        else{
-            nextView = topText;
-            }
+    public void toggler(final TextView textView){
+        final TextView nextView = ((textView.getId() == R.id.top) ? bottomText : topText);
 
         countDownTimer = new CountDownTimer(convertStringToLong(nextView.getText().toString()) * 1000, 1000) {
             @Override
             public void onTick(long l){
-
                 playpause.setImageDrawable(getResources().getDrawable(R.drawable.tas_pause));
                 stop.setImageDrawable(getResources().getDrawable(R.drawable.tas_stop));
                 reset.setImageDrawable(getResources().getDrawable(R.drawable.tas_reset));
@@ -125,26 +114,23 @@ public class SurgicalRoom extends AppCompatActivity {
                         onStopPressed();
                     }
                 });
-
                 reset.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view){
                         onResetPressed();
                     }
                 });
-
                 textView.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view){
                         //Do nothing!
                     }
                 });
-
                 nextView.setOnClickListener(new View.OnClickListener(){
                     @Override
                     public void onClick(View view){
                         countDownTimer.cancel();
-                        theTextViewToggler(nextView);
+                        toggler(nextView);
                     }
                 });
 
@@ -183,11 +169,11 @@ public class SurgicalRoom extends AppCompatActivity {
                             if(startFromTop){
                                 playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
                                 startFromTop = false;
-                                theTextViewToggler(bottomText);
+                                toggler(bottomText);
                             }
                             else{
                                 playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
-                                theTextViewToggler(topText);
+                                toggler(topText);
                             }
                         }
                     }
@@ -205,9 +191,7 @@ public class SurgicalRoom extends AppCompatActivity {
                 playpause.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(getApplicationContext(), SurgicalRoom.class);
-                        intent.putExtra("EXTRA", minutes);
-                        startActivity(intent);
+                        startActivity(new Intent(getApplicationContext(), SurgicalRoom.class).putExtra("EXTRA", minutes));
                     }
                 });
                 stop.setImageDrawable(null);
@@ -241,7 +225,7 @@ public class SurgicalRoom extends AppCompatActivity {
     }
 
 
-    public String convertLongToString(long number) {
+    public String convertLongToString(long number){
 
         String timeString = null;
 

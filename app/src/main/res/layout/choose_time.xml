@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#f7d6a5"
-    android:id="@+id/maam"
+    android:id="@+id/madam"
     tools:context="com.dabinu.apps.chesstimer.ChooseTimeActivity">
 
     <RelativeLayout
@@ -19,17 +18,19 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
+            android:contentDescription="@string/about"
             android:layout_marginEnd="10dp"
             android:id="@+id/aboutUs"
             android:background="#3c2509"
-            android:src="@drawable/aboutus"/>
+            android:src="@drawable/about_us"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:gravity="center"
-            android:text="The Clicker"
+            android:id="@+id/title"
+            android:text="@string/app_name"
             android:textColor="@android:color/darker_gray"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -66,7 +67,7 @@
                 android:background="#ffbd5b"
                 android:elevation="30dp"
                 android:orientation="vertical"
-                android:visibility="invisible">
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,6 +101,7 @@
                         android:layout_gravity="center"
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="10dp"
+                        android:contentDescription="@string/move_to_next_activity"
                         android:scaleType="fitXY"
                         android:background="#ffbd5b"
                         android:src="@drawable/next" />
