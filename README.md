@@ -1,11 +1,11 @@
-# Pawn-down: A Chess-timer android application (1.0)
+# Pawn-down: A Chess-timer android application (v1.0)
 
 A simple chess-timer android application where users can choose any length of time (not more than 100 minutes) and the countdown begins! Please feel free to contribute and of course, modify and use in your own personal projects.
 
 Author: Taslim Oseni
 ==========================================================================
 
-### About
+### About:
 
 * written in: Java and XML.
 
@@ -19,11 +19,20 @@ Author: Taslim Oseni
 Android smartphone (min SDK: 19)
 
 
-### Installation
+### Installation:
 
 * Download or clone from https://www.github.com/TaslimOseni/Pawn-down, build and run
 * Available on Google play store soon!
 
+
+### Preview:
+
+<p>
+  <img src="picss/Screenshot_20171223-170359.png" width="300"/>
+  </p>
+  <p>
+  <img src="picss/Screenshot_20171223-170549.png" width ="300"/>
+</p>
 
 
 ### To do:
@@ -31,5 +40,5 @@ Android smartphone (min SDK: 19)
 * Improve UI and add animations
 
 
-### Issues
+### Issues:
 * null
