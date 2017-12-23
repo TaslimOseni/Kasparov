@@ -10,9 +10,9 @@
     <TextView
         android:id="@+id/top"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_alignParentTop="true"
+        android:layout_height="match_parent"
         android:gravity="center"
+        android:layout_above="@+id/noMansLand"
         android:rotation="180"
         android:textColor="@android:color/darker_gray"
         android:textSize="50sp" />
@@ -20,19 +20,17 @@
     <TextView
         android:id="@+id/bottom"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="match_parent"
         android:textColor="@android:color/darker_gray"
-        android:layout_alignParentStart="true"
         android:gravity="center"
+        android:layout_below="@+id/noMansLand"
         android:textSize="50sp" />
 
     <RelativeLayout
         android:id="@+id/noMansLand"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom"
-        android:layout_below="@+id/top"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true"
         android:background="#3c2509">
 
         <ImageButton
@@ -42,8 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            android:layout_toStartOf="@+id/playPauseToggle"
-            android:layout_marginEnd="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
             android:layout_centerInParent="true"
             android:background="#3c2509" />
 
@@ -64,8 +62,8 @@
             android:contentDescription="@string/reset_button"
             android:layout_gravity="center"
             android:scaleType="fitCenter"
-            android:layout_toEndOf="@+id/playPauseToggle"
-            android:layout_marginStart="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
             android:layout_centerInParent="true"
             android:background="#3c2509" />
 
