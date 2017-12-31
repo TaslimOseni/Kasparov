@@ -1,4 +1,4 @@
-# Pawn-down: A Chess-timer android application (v1.0)
+# Pawn-bomb: A Chess-timer android application (v1.0)
 
 A simple chess-timer android application where users can choose any length of time (not more than 100 minutes) and the countdown begins! Please feel free to contribute and of course, modify and use in your own personal projects.
 
