@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">The Clicker</string>
+    <string name="app_name">Kasparov</string>
 
     <string name="title_activity_main_process">MainProcess</string>
     <string name="timeUp">Time up!!!</string>

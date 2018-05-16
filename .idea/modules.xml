@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Chesstimer.iml" filepath="$PROJECT_DIR$/Chesstimer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/The-Clicker.iml" filepath="$PROJECT_DIR$/The-Clicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chess-Timer.iml" filepath="$PROJECT_DIR$/Chess-Timer.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
