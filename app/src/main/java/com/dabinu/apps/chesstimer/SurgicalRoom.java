@@ -145,7 +145,7 @@ public class SurgicalRoom extends AppCompatActivity {
                             }
 
                             countDownTimer.cancel();
-                            playpause.setImageDrawable(getDrawable(R.drawable.tas_play));
+                            playpause.setImageResource(R.drawable.tas_play);
                             Toast.makeText(getApplicationContext(), "Paused", Toast.LENGTH_SHORT).show();
 
                             topText.setOnClickListener(new View.OnClickListener(){
@@ -167,12 +167,12 @@ public class SurgicalRoom extends AppCompatActivity {
                         else{
                             Toast.makeText(getApplicationContext(), "Continued", Toast.LENGTH_SHORT).show();
                             if(startFromTop){
-                                playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
+                                playpause.setImageResource(R.drawable.tas_pause);
                                 startFromTop = false;
                                 toggler(bottomText);
                             }
                             else{
-                                playpause.setImageDrawable(getDrawable(R.drawable.tas_pause));
+                                playpause.setImageResource(R.drawable.tas_pause);
                                 toggler(topText);
                             }
                         }
@@ -309,7 +309,7 @@ public class SurgicalRoom extends AppCompatActivity {
 
 
     public void onStopPressed(){
-        if(playpause.getDrawable().getConstantState() != getResources().getDrawable(R.drawable.tas_pause).getConstantState() && isStarted){
+        if((playpause.getDrawable().getConstantState() != getResources().getDrawable(R.drawable.tas_pause).getConstantState()) && isStarted){
             new AlertDialog.Builder(this)
                     .setMessage(R.string.stop_query)
                     .setCancelable(false)
