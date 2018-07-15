@@ -13,8 +13,8 @@ Android smartphone (min SDK: 19)
 
 ### Installation:
 
-* Clone from Github <a href="https://www.github.com/TaslimOseni/Pawn-down">here</a>, build and run
-* Download from Google play store <a href="https://play.google.com/store/apps/details?id=com.dabinu.apps.chesstimer">here</a>
+* <a href="https://www.github.com/TaslimOseni/Pawn-down"><b>Github</b></a>
+* <a href="https://play.google.com/store/apps/details?id=com.dabinu.apps.chesstimer"><b>Google Play Store</b></a>
 
 
 ### Preview:
