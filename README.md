@@ -13,17 +13,15 @@ Android smartphone (min SDK: 19)
 
 ### Installation:
 
-* <a href="https://www.github.com/TaslimOseni/Pawn-down"><b>Github</b></a>
+* <a href="https://github.com/TaslimOseni/Kasparov.git"><b>Github</b></a>
 * <a href="https://play.google.com/store/apps/details?id=com.dabinu.apps.chesstimer"><b>Google Play Store</b></a>
 
 
 ### Preview:
 
 <p>
-  <img src="picss/Screenshot_20171223-170359.png" width="300"/>
-  </p>
-  <p>
-  <img src="picss/Screenshot_20171223-170549.png" width ="300"/>
+  <img src="picss/Screenshot_20171223-170359.png"/>
+  <img src="picss/Screenshot_20171223-170549.png"/>
 </p>
 
 
