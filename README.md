@@ -20,8 +20,8 @@ Android smartphone (min SDK: 19)
 ### Preview:
 
 <p>
-  <img src="picss/Screenshot_20171223-170359.png"/>
-  <img src="picss/Screenshot_20171223-170549.png"/>
+  <img src="picss/Screenshot_20171223-170359.png" width="300px"/>
+  <img src="picss/Screenshot_20171223-170549.png" width="300px"/>
 </p>
 
 
