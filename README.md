@@ -5,14 +5,6 @@ A simple chess-timer android application where users can choose any length of ti
 Author: Taslim Oseni
 ==========================================================================
 
-### About:
-
-* written in: Java and XML.
-
-* IDE used: Android studio
-
-* compatible with all android smartphones with SDK 19 or higher.
-
 
 ### Requirements:
 
