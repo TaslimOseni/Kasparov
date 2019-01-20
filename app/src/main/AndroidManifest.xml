@@ -16,11 +16,13 @@
         <activity android:name=".ChooseTimeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".SurgicalRoom" />
         <activity android:name=".AboutUs" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#333333"
+    tools:context=".TimerFragment">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/top"
+        app:cardBackgroundColor="#666666"
+        app:cardElevation="10dp"
+        android:layout_above="@+id/noMansLand"
+        android:rotation="180"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="05:00"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moves: 0"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="7dp"/>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/bottom"
+        app:cardBackgroundColor="#666666"
+        app:cardElevation="10dp"
+        android:layout_below="@+id/noMansLand"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="05:00"
+            android:layout_gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moves: 0"
+            android:textSize="12sp"
+            android:textColor="#FFFFFF"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="7dp"/>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
+    <RelativeLayout
+        android:id="@+id/noMansLand"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_centerInParent="true">
+
+        <ImageButton
+            android:id="@+id/reset"
+            android:contentDescription="@string/stop_button"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/tas_reset"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/playPauseToggle"
+            android:layout_width="40dp"
+            android:src="@drawable/tas_pause"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/play_button"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/settings"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/reset_button"
+            android:src="@drawable/settings"
+            android:scaleType="fitCenter"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
