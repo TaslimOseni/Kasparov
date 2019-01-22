@@ -43,7 +43,7 @@ public class AboutFragment extends android.app.Fragment {
             public boolean onLongClick(View view){
                 copyToClipboard(getActivity().getApplicationContext(), "https://github.com/TaslimOseni/kasparov");
                 Toast.makeText(getActivity().getApplicationContext(), "Copied", Toast.LENGTH_LONG).show();
-                return false;
+                return true;
             }
         });
 

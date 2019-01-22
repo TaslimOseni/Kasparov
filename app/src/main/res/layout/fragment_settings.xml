@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:id="@+id/top"
-        android:background="#222222">
+        android:background="#111111">
 
         <TextView
             android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
             android:text="Settings"
             android:gravity="center"
             android:layout_marginStart="15dp"
-            android:textColor="#888888"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:textSize="23dp"/>
 
@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:text="Notifications"
                     android:textSize="21sp"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#888888"
                     android:textStyle="bold" />
 
 
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="40dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:text="Color"
                     android:textSize="21sp"
-                    android:textColor="#FFFFFF"
+                    android:textColor="#888888"
                     android:textStyle="bold" />
 
 

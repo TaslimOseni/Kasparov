@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="#00FF00"
+            android:textColor="#FFFF00"
             android:textSize="25sp"
             android:fontFamily="casual"
             android:textStyle="bold"
@@ -35,13 +35,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="#FFFF00"
+            android:textColor="#FFFFFF"
             android:textSize="15sp"
             android:fontFamily="casual"
             android:textStyle="bold"
-            android:padding="10dp"
-            android:text="\tI know MOST of you are here because you don't own an actual chess timer. Blah, you don't need one.\n\n\tKasparov is open-source. In simple terms, this means you can contribute to this app and make it extra great. Even if you don't know how to write Android code, you can still make suggestions on the GitHub 'issues' tab.\n\n\tThanks for your continued usage. Go on and tell your friends about this app.\n\n\tI'm waiting..." />
+            android:padding="15dp"
+            android:text="\tI know MOST of you are here because you don't own an actual chess timer. Blah, you don't need one.\n\n\tKasparov is open-source. In simple terms, this means you can contribute to this app and make it extra great. Even if you don't know how to write Android code, you can still make suggestions on the GitHub 'issues' tab.\n\n\tThanks for your continued usage. Go on and tell your friends about this app. Go right now, I'm serious." />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="With love,\nTaslim Oseni"
+            android:layout_gravity="end"
+            android:layout_marginEnd="17dp"
+            android:textColor="#ffff00"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:textSize="15sp"/>
 
         <Button
             android:layout_width="150dp"
@@ -49,7 +59,7 @@
             android:layout_gravity="center"
             android:text="Github link"
             android:id="@+id/github_link"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:backgroundTint="#222222"
             android:textColor="#00FF00"
@@ -60,8 +70,9 @@
             android:layout_height="wrap_content"
             android:text="Long press to copy"
             android:layout_gravity="center"
-            android:textColor="#FFFF00"
-            android:layout_marginTop="3dp"
+            android:textStyle="italic"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
             android:layout_marginBottom="30dp"/>
 
 

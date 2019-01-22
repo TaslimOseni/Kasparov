@@ -70,10 +70,15 @@ public class NewGameModeFragment extends android.app.Fragment implements View.On
         delay_units = new ArrayList<>();
         duration_units = new ArrayList<>();
 
-        for(int i = 1; i <= 60; i++){
-            duration_units.add(Integer.toString(i));
+        delay_units.add("No delay");
+        delay_units.add("1 second");
+
+        duration_units.add("1 minute");
+
+        for(int i = 2; i <= 60; i++){
+            duration_units.add(String.format("%s minutes", Integer.toString(i)));
             if(i <= 15){
-                delay_units.add(Integer.toString(i));
+                delay_units.add(String.format("%s seconds", Integer.toString(i)));
             }
         }
     }
@@ -84,7 +89,7 @@ public class NewGameModeFragment extends android.app.Fragment implements View.On
             name.setError("Input a valid name..");
         }
         else{
-            GameMode gameMode = new GameMode(name.getText().toString().trim(), (String) delay.getSelectedItem(), (String) duration.getSelectedItem());
+            GameMode gameMode = new GameMode(name.getText().toString().trim(), ((String) delay.getSelectedItem()).equals("No delay") ? "0" : ((String) delay.getSelectedItem()).split(" ")[0], ((String) duration.getSelectedItem()).split(" ")[0]);
 
             Random random = new Random();
             int code = random.nextInt(9000);
