@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    android:orientation="vertical"
+    tools:context=".AboutFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/the_pawn"
+            android:background="@android:color/transparent"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="#00FF00"
+            android:textSize="25sp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:text="Kasparov"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFF00"
+            android:textSize="15sp"
+            android:fontFamily="casual"
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:text="\tI know MOST of you are here because you don't own an actual chess timer. Blah, you don't need one.\n\n\tKasparov is open-source. In simple terms, this means you can contribute to this app and make it extra great. Even if you don't know how to write Android code, you can still make suggestions on the GitHub 'issues' tab.\n\n\tThanks for your continued usage. Go on and tell your friends about this app.\n\n\tI'm waiting..." />
+
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="Github link"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:backgroundTint="#222222"
+            android:textColor="#00FF00"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Long press to copy"
+            android:layout_gravity="center"
+            android:textColor="#FFFF00"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="30dp"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
