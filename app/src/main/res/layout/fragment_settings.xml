@@ -1,158 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#333333"
+    android:orientation="vertical"
     tools:context=".SettingsFragment">
 
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="56dp"
+        android:id="@+id/top"
+        android:background="#222222">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="#222222">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Settings"
+            android:gravity="center"
+            android:layout_marginStart="15dp"
+            android:textColor="#888888"
+            android:textStyle="bold"
+            android:textSize="23dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Settings"
-                android:gravity="center"
-                android:layout_marginStart="15dp"
-                android:textColor="#888888"
-                android:textStyle="bold"
-                android:textSize="23dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Save"
+            android:id="@+id/save_text_view"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_green_dark"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:padding="15dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="Save"
-                android:textSize="16sp"
-                android:textColor="@android:color/holo_green_dark"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_alignParentEnd="true"
-                android:padding="15dp"/>
-
-        </RelativeLayout>
+    </RelativeLayout>
 
 
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="30dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notifications"
-                android:textSize="21sp"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Vibrate when done"
-                    android:gravity="center"
-                    android:textSize="16sp"
-                    android:layout_alignParentStart="true"
-                    android:textColor="@android:color/holo_blue_dark"/>
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:buttonTint="#FFFFFF"/>
-
-
-            </RelativeLayout>
-
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Play sound when done"
-                    android:textSize="16sp"
-                    android:layout_alignParentStart="true"
-                    android:textColor="@android:color/holo_blue_dark"/>
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentEnd="true"
-                    android:buttonTint="#FFFFFF"/>
-
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="30dp"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Color"
-                android:textSize="21sp"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
-
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="30dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Active tile color"
-                    android:textColor="@android:color/holo_blue_dark" />
+                    android:text="Notifications"
+                    android:textSize="21sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
-                <Spinner
+
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="25dp"
-                    android:background="@drawable/block_spinner_layout"
-                    android:layout_marginTop="15dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Vibrate when done"
+                        android:gravity="center"
+                        android:textSize="16sp"
+                        android:layout_alignParentStart="true"
+                        android:textColor="@android:color/holo_blue_dark"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/should_vibrate"
+                        android:buttonTint="#FFFFFF"/>
 
 
-            </Spinner>
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Play sound when done"
+                        android:textSize="16sp"
+                        android:layout_alignParentStart="true"
+                        android:textColor="@android:color/holo_blue_dark"/>
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/should_ring"
+                        android:buttonTint="#FFFFFF"/>
+
+
+                </RelativeLayout>
+
 
             </LinearLayout>
 
@@ -160,63 +124,135 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="45dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="35dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Inactive tile color"
-                    android:textColor="@android:color/holo_blue_dark" />
+                    android:text="Color"
+                    android:textSize="21sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
 
-                <Spinner
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="25dp"
-                    android:background="@drawable/block_spinner_layout"
-                    android:layout_marginTop="15dp">
-
-
-                </Spinner>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="45dp"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Timer background color"
-                    android:textColor="@android:color/holo_blue_dark" />
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
 
-                <Spinner
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Active tile color"
+                        android:textColor="@android:color/holo_blue_dark" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:id="@+id/spinner_active_color"
+                        android:background="@drawable/block_spinner_layout"
+                        android:layout_marginTop="10dp">
+
+
+                    </Spinner>
+
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="25dp"
-                    android:background="@drawable/block_spinner_layout"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginTop="15dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inactive tile color"
+                        android:textColor="@android:color/holo_blue_dark" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:id="@+id/spinner_inactive_color"
+                        android:background="@drawable/block_spinner_layout"
+                        android:layout_marginTop="10dp">
 
 
-                </Spinner>
+                    </Spinner>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Default tile color"
+                        android:textColor="@android:color/holo_blue_dark" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:id="@+id/spinner_default_color"
+                        android:background="@drawable/block_spinner_layout"
+                        android:layout_marginTop="10dp">
+
+
+                    </Spinner>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Background color"
+                        android:textColor="@android:color/holo_blue_dark" />
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:id="@+id/spinner_background_color"
+                        android:background="@drawable/block_spinner_layout"
+                        android:layout_marginBottom="40dp"
+                        android:layout_marginTop="10dp">
+
+
+                    </Spinner>
+
+                </LinearLayout>
+
 
             </LinearLayout>
-
 
         </LinearLayout>
 
 
+    </ScrollView>
 
-    </LinearLayout>
 
-
-</ScrollView>
+</LinearLayout>

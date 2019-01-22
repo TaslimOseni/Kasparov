@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TimerFragment extends Fragment {
+public class TimerFragment extends android.app.Fragment {
 
 
     public TimerFragment() {

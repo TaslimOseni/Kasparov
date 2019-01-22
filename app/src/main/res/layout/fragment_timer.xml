@@ -79,7 +79,6 @@
 
         <ImageButton
             android:id="@+id/reset"
-            android:contentDescription="@string/stop_button"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
@@ -94,7 +93,6 @@
             android:layout_width="40dp"
             android:src="@drawable/tas_pause"
             android:layout_height="match_parent"
-            android:contentDescription="@string/play_button"
             android:layout_centerHorizontal="true"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter" />
@@ -103,7 +101,6 @@
             android:id="@+id/settings"
             android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:contentDescription="@string/reset_button"
             android:src="@drawable/settings"
             android:scaleType="fitCenter"
             android:layout_alignParentEnd="true"

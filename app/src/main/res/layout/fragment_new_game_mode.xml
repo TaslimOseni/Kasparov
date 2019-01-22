@@ -31,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:text="Save"
+                android:id="@+id/save"
                 android:textSize="16sp"
                 android:textColor="@android:color/holo_green_dark"
                 android:textStyle="bold"
@@ -56,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="45dp"
+                android:layout_marginEnd="15dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -65,15 +66,18 @@
                     android:text="Choose a name"
                     android:textColor="@android:color/holo_blue_dark" />
 
-                <Spinner
+                <EditText
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginStart="25dp"
                     android:background="@drawable/block_spinner_layout"
-                    android:layout_marginTop="10dp">
-
-
-                </Spinner>
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:hint="Name"
+                    android:singleLine="true"
+                    android:id="@+id/name"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="14sp"/>
 
             </LinearLayout>
 
@@ -82,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="45dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="40dp"
                 android:orientation="vertical">
 
@@ -95,7 +99,7 @@
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginStart="25dp"
+                    android:id="@+id/duration"
                     android:background="@drawable/block_spinner_layout"
                     android:layout_marginTop="10dp">
 
@@ -105,52 +109,26 @@
             </LinearLayout>
 
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="45dp"
+                android:layout_marginEnd="15dp"
                 android:layout_marginTop="40dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Select a delay type"
+                    android:text="Select a delay interval"
                     android:textColor="@android:color/holo_blue_dark" />
 
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
-                    android:layout_marginStart="25dp"
                     android:background="@drawable/block_spinner_layout"
-                    android:layout_marginTop="10dp">
-
-
-                </Spinner>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="45dp"
-                android:layout_marginTop="40dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select a delay period"
-                    android:textColor="@android:color/holo_blue_dark" />
-
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="25dp"
-                    android:background="@drawable/block_spinner_layout"
+                    android:id="@+id/delay"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="10dp">
 

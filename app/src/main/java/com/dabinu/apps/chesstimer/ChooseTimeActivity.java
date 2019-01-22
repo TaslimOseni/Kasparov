@@ -42,17 +42,17 @@ public class ChooseTimeActivity extends AppCompatActivity {
         go = findViewById(R.id.goToNext);
         other = findViewById(R.id.other);
         aboutUs = findViewById(R.id.aboutUs);
-        minAdapter = ArrayAdapter.createFromResource(this, R.array.mn, R.layout.spinnerheader);
+//        minAdapter = ArrayAdapter.createFromResource(this, R.array.mn, R.layout.spinnerheader);
         minAdapter.setDropDownViewResource(R.layout.spinnercontent);
         min.setAdapter(minAdapter);
 
-        final Intent toAbout = new Intent(this, AboutUs.class);
-        aboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(toAbout);
-            }
-        });
+//        final Intent toAbout = new Intent(this, AboutUs.class);
+//        aboutUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(toAbout);
+//            }
+//        });
 
         final Intent toTheSurgicalRoom = new Intent(this, SurgicalRoom.class);
 
