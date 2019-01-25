@@ -19,6 +19,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import static com.dabinu.apps.chesstimer.TimerFragment.convertStringToLong;
 
 
 public class SurgicalRoom extends AppCompatActivity {
@@ -42,17 +43,17 @@ public class SurgicalRoom extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_surgical_room);
-
-        minutes = getIntent().getStringExtra("EXTRA");
-
-        noMansLand = findViewById(R.id.noMansLand);
-        topText = findViewById(R.id.top);
-        bottomText = findViewById(R.id.bottom);
-        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        playpause = findViewById(R.id.playPauseToggle);
-        stop = findViewById(R.id.stop);
-        reset = findViewById(R.id.reset);
-
+//
+//        minutes = getIntent().getStringExtra("EXTRA");
+//
+//        noMansLand = findViewById(R.id.noMansLand);
+//        topText = findViewById(R.id.top);
+//        bottomText = findViewById(R.id.bottom);
+//        vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//        playpause = findViewById(R.id.playPauseToggle);
+//        stop = findViewById(R.id.stop);
+//        reset = findViewById(R.id.reset);
+//
 //
 //        playpause.setOnClickListener(new View.OnClickListener(){
 //            @Override
@@ -108,18 +109,7 @@ public class SurgicalRoom extends AppCompatActivity {
 //                nextView.setBackgroundColor(Color.GREEN);
 //                textView.setBackgroundColor(Color.RED);
 //
-//                stop.setOnClickListener(new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View view) {
-//                        onStopPressed();
-//                    }
-//                });
-//                reset.setOnClickListener(new View.OnClickListener(){
-//                    @Override
-//                    public void onClick(View view){
-//                        onResetPressed();
-//                    }
-//                });
+//
 //                textView.setOnClickListener(new View.OnClickListener(){
 //                    @Override
 //                    public void onClick(View view){
@@ -223,8 +213,8 @@ public class SurgicalRoom extends AppCompatActivity {
 //            }
 //        }.start();
 //    }
-//
-//
+
+
 //    public String convertLongToString(long number){
 //
 //        String timeString = null;

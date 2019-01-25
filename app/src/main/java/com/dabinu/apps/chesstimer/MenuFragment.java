@@ -14,7 +14,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import java.io.File;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -150,7 +149,7 @@ public class MenuFragment extends android.app.Fragment implements Serializable, 
         }
         else if(view.getId() == R.id.start_game){
             if(mode_spinner.getSelectedItem().equals("Normal")){
-                editor.putString("duration", (String) time_spinner.getSelectedItem());
+                editor.putString("duration", ((String) time_spinner.getSelectedItem()).split(" ")[0]);
                 editor.putString("delay", "0");
                 editor.apply();
             }

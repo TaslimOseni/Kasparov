@@ -14,6 +14,12 @@
         <item>Deep-Gray</item>
     </string-array>
 
+    <string-array name="bkd_colors">
+        <item>Deep-Gray</item>
+        <item>Black</item>
+        <item>Gray</item>
+    </string-array>
+
     <string-array name="time">
         <item>5 min</item>
         <item>10 min</item>

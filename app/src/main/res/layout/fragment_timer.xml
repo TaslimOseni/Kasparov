@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/background"
     android:background="#333333"
     tools:context=".TimerFragment">
 
@@ -11,9 +11,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/top"
-        app:cardBackgroundColor="#666666"
-        app:cardElevation="10dp"
+        android:id="@+id/playerB"
         android:layout_above="@+id/noMansLand"
         android:rotation="180"
         android:layout_margin="20dp">
@@ -22,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="05:00"
+            android:id="@+id/timerB"
             android:layout_gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="50sp" />
@@ -30,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Moves: 0"
+            android:id="@+id/movesB"
             android:textColor="#FFFFFF"
             android:textSize="12sp"
             android:layout_gravity="bottom|end"
@@ -43,9 +43,7 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/bottom"
-        app:cardBackgroundColor="#666666"
-        app:cardElevation="10dp"
+        android:id="@+id/playerA"
         android:layout_below="@+id/noMansLand"
         android:layout_margin="20dp">
 
@@ -53,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="05:00"
+            android:id="@+id/timerA"
             android:layout_gravity="center"
             android:textColor="#FFFFFF"
             android:textSize="50sp" />
@@ -61,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Moves: 0"
+            android:id="@+id/movesA"
             android:textSize="12sp"
             android:textColor="#FFFFFF"
             android:layout_gravity="bottom|end"
@@ -78,7 +78,7 @@
         android:layout_centerInParent="true">
 
         <ImageButton
-            android:id="@+id/reset"
+            android:id="@+id/resetBut"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
@@ -89,16 +89,17 @@
             android:background="@android:color/transparent" />
 
         <ImageButton
-            android:id="@+id/playPauseToggle"
+            android:id="@+id/pauseBut"
             android:layout_width="40dp"
             android:src="@drawable/tas_pause"
             android:layout_height="match_parent"
+            android:visibility="gone"
             android:layout_centerHorizontal="true"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter" />
 
         <ImageButton
-            android:id="@+id/settings"
+            android:id="@+id/settingsBut"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:src="@drawable/settings"

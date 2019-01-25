@@ -74,9 +74,9 @@ public class SettingsFragment extends android.app.Fragment implements View.OnCli
         default_color.setAdapter(def_color_adapter);
 
         background_color = view.findViewById(R.id.spinner_background_color);
-        ArrayAdapter bkd_color_adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.colors, R.layout.spinnerheader);
+        ArrayAdapter bkd_color_adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.bkd_colors  , R.layout.spinnerheader);
         bkd_color_adapter.setDropDownViewResource(R.layout.drop_down);
-        background_color.setAdapter(def_color_adapter);
+        background_color.setAdapter(bkd_color_adapter);
 
         save_text = view.findViewById(R.id.save_text_view);
 
@@ -89,7 +89,7 @@ public class SettingsFragment extends android.app.Fragment implements View.OnCli
         active_color.setSelection(Arrays.asList(getResources().getStringArray(R.array.colors)).indexOf(sharedPreferences.getString("active_color", "Green")));
         inactive_color.setSelection(Arrays.asList(getResources().getStringArray(R.array.colors)).indexOf(sharedPreferences.getString("inactive_color", "Red")));
         default_color.setSelection(Arrays.asList(getResources().getStringArray(R.array.colors)).indexOf(sharedPreferences.getString("default_color", "Gray")));
-        background_color.setSelection(Arrays.asList(getResources().getStringArray(R.array.colors)).indexOf(sharedPreferences.getString("background_color", "Deep-Gray")));
+        background_color.setSelection(Arrays.asList(getResources().getStringArray(R.array.bkd_colors)).indexOf(sharedPreferences.getString("background_color", "Deep-Gray")));
     }
 
 
