@@ -24,11 +24,12 @@ import java.util.ArrayList;
 
 public class MenuFragment extends android.app.Fragment implements Serializable, View.OnClickListener{
 
+
     Spinner time_spinner, mode_spinner;
     TextView start_game;
     ImageButton settings, about;
     ArrayList<GameMode> allModes;
-    ArrayList<String> allModeNames;
+    ArrayList<String> allModeNames, allTimeInMinutes;
     FragmentTransaction fragmentTransaction;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -44,6 +45,7 @@ public class MenuFragment extends android.app.Fragment implements Serializable, 
         View view = inflater.inflate(R.layout.fragment_menu, container, false);
 
         getAllModes();
+        getAllTimeInMinutes();
         init(view);
 
         return view;
@@ -65,9 +67,11 @@ public class MenuFragment extends android.app.Fragment implements Serializable, 
 
 
         time_spinner = view.findViewById(R.id.time_spinner);
-        ArrayAdapter time_adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.time, R.layout.spinnerheader);
+        ArrayAdapter time_adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.spinnerheader, allTimeInMinutes);
         time_adapter.setDropDownViewResource(R.layout.drop_down);
         time_spinner.setAdapter(time_adapter);
+        time_spinner.setSelection(4);
+
 
         mode_spinner = view.findViewById(R.id.mode_spinner);
         ArrayAdapter mode_adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.spinnerheader, allModeNames);
@@ -132,6 +136,15 @@ public class MenuFragment extends android.app.Fragment implements Serializable, 
     }
 
 
+    public void getAllTimeInMinutes(){
+        allTimeInMinutes = new ArrayList<>();
+
+        for(int i = 1; i <= 60; i++){
+            allTimeInMinutes.add(String.format("%d min", i));
+        }
+    }
+
+
     public void goToFragement(Fragment fragment){
         fragmentTransaction = getActivity().getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.container, fragment);
@@ -165,9 +178,10 @@ public class MenuFragment extends android.app.Fragment implements Serializable, 
 
     public void setTimerAdapter(boolean isZero){
         if(isZero){
-            ArrayAdapter time_adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.time, R.layout.spinnerheader);
+            ArrayAdapter time_adapter = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.spinnerheader, allTimeInMinutes);
             time_adapter.setDropDownViewResource(R.layout.drop_down);
             time_spinner.setAdapter(time_adapter);
+            time_spinner.setSelection(4);
         }
         else{
             ArrayAdapter time_adapter = ArrayAdapter.createFromResource(getActivity().getApplicationContext(), R.array.no_time, R.layout.spinnerheader);

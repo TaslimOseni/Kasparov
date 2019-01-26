@@ -96,17 +96,37 @@ public class SettingsFragment extends android.app.Fragment implements View.OnCli
     @Override
     public void onClick(View view){
 
-        editor.putString("vibrate", should_vibrate.isChecked() ? "true" : "false");
-        editor.putString("ring", should_ring.isChecked() ? "true" : "false");
-        editor.putString("active_color", (String) active_color.getSelectedItem());
-        editor.putString("inactive_color", (String) inactive_color.getSelectedItem());
-        editor.putString("default_color", (String) default_color.getSelectedItem());
-        editor.putString("background_color", (String) background_color.getSelectedItem());
-        editor.apply();
+        if(((String) active_color.getSelectedItem()).equals((String) inactive_color.getSelectedItem())){
+            Toast.makeText(getActivity().getApplicationContext(), "Active and inactive color must be different", Toast.LENGTH_SHORT).show();
+        }
+        else if(((String) active_color.getSelectedItem()).equals((String) default_color.getSelectedItem())){
+            Toast.makeText(getActivity().getApplicationContext(), "Active and default color must be different", Toast.LENGTH_SHORT).show();
+        }
+        else if(((String) active_color.getSelectedItem()).equals((String) background_color.getSelectedItem())){
+            Toast.makeText(getActivity().getApplicationContext(), "Active and background color must be different", Toast.LENGTH_SHORT).show();
+        }
+        else if(((String) inactive_color.getSelectedItem()).equals((String) default_color.getSelectedItem())){
+            Toast.makeText(getActivity().getApplicationContext(), "Inactive and default color must be different", Toast.LENGTH_SHORT).show();
+        }
+        else if(((String) inactive_color.getSelectedItem()).equals((String) background_color.getSelectedItem())){
+            Toast.makeText(getActivity().getApplicationContext(), "Inactive and background color must be different", Toast.LENGTH_SHORT).show();
+        }
+        else if(((String) default_color.getSelectedItem()).equals((String) background_color.getSelectedItem())){
+            Toast.makeText(getActivity().getApplicationContext(), "Default and background color must be different", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            editor.putString("vibrate", should_vibrate.isChecked() ? "true" : "false");
+            editor.putString("ring", should_ring.isChecked() ? "true" : "false");
+            editor.putString("active_color", (String) active_color.getSelectedItem());
+            editor.putString("inactive_color", (String) inactive_color.getSelectedItem());
+            editor.putString("default_color", (String) default_color.getSelectedItem());
+            editor.putString("background_color", (String) background_color.getSelectedItem());
+            editor.apply();
 
-        Toast.makeText(getActivity().getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(), "Saved", Toast.LENGTH_SHORT).show();
 
-        goToHomeFragment();
+            goToHomeFragment();
+        }
     }
 
 

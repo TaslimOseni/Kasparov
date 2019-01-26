@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/background"
     android:background="#333333"
     tools:context=".TimerFragment">
@@ -12,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/playerB"
+        app:cardElevation="5dp"
         android:layout_above="@+id/noMansLand"
         android:rotation="180"
         android:layout_margin="20dp">
@@ -44,6 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/playerA"
+        app:cardElevation="5dp"
         android:layout_below="@+id/noMansLand"
         android:layout_margin="20dp">
 
