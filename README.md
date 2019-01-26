@@ -1,6 +1,7 @@
-# A Chess-timer android application (v1.0)
+# A Chess-timer android application (v2.0)
 
-A simple chess-timer android application where users can choose any length of time (not more than 100 minutes) and the countdown begins! Please feel free to contribute and of course, modify and use in your own personal projects.
+A simple chess-timer android application where users can choose any length of game-time and the countdown begins! Please feel free to contribute to this project.
+
 
 Author: Taslim Oseni
 ==========================================================================
@@ -20,14 +21,11 @@ Android smartphone (min SDK: 19)
 ### Preview:
 
 <p>
-  <img src="picss/Screenshot_20171223-170359.png" width="300px"/>
-  <img src="picss/Screenshot_20171223-170549.png" width="300px"/>
+  <img src="picss/splash.png" width="300px"/>
+  <img src="picss/default.png" width="300px"/>
+  <img src="picss/active.png" width="300px"/>
+  <img src="picss/settings.png" width="300px"/>
 </p>
-
-
-### To do:
-* Introduce two-device mode where users can run time each other from two different devices connected through WiFi
-* Improve UI and add animations
 
 
 ### Issues:
