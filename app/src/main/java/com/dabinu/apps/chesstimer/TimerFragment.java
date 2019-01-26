@@ -152,51 +152,37 @@ public class TimerFragment extends android.app.Fragment implements View.OnClickL
     @Override
     public void onClick(View view){
         if(view.getId() == R.id.settingsBut){
-            countDownTimer.cancel();
             goToFragement(new SettingsFragment());
         }
 
         else if(view.getId() == R.id.resetBut){
-            countDownTimer.cancel();
             goToFragement(new TimerFragment());
         }
 
         else if(view.getId() == R.id.playerA){
-            new CountDownTimer(delay, 1000){
-                @Override
-                public void onTick(long l) {
-
-                }
-
-                @Override
-                public void onFinish() {
-                    playerToggler(playerA);
-                }
-            }.start();
+            if(delay == 0){
+                playerToggler(playerA);
+            }
+            else{
+                initialToggler(playerA);
+            }
         }
 
         else if(view.getId() == R.id.playerB){
-            new CountDownTimer(delay, 1000){
-                @Override
-                public void onTick(long l) {
-                    playerA.setOnClickListener(new View.OnClickListener(){
-                        @Override
-                        public void onClick(View view) {
-                            cancel();
-
-                        }
-                    });
-                }
-
-                @Override
-                public void onFinish() {
-                    playerToggler(playerB);
-                }
-            }.start();
+            if(delay == 0){
+                playerToggler(playerB);
+            }
+            else{
+                initialToggler(playerB);
+            }
         }
 
 
         else if(view.getId() == R.id.pauseBut){
+
+            if(countDownTimer != null){
+                countDownTimer.cancel();
+            }
 
             Toast.makeText(getActivity().getApplicationContext(), "Paused", Toast.LENGTH_SHORT).show();
 
@@ -239,7 +225,13 @@ public class TimerFragment extends android.app.Fragment implements View.OnClickL
                     @Override
                     public void onClick(View view) {
                         countDownTimer.cancel();
-                        playerToggler(nextPlayer);
+                        if(delay == 0){
+                            playerToggler(nextPlayer);
+                        }
+                        else{
+                            initialToggler(nextPlayer);
+                        }
+
                     }
                 });
                 player.setOnClickListener(null);
@@ -249,6 +241,10 @@ public class TimerFragment extends android.app.Fragment implements View.OnClickL
             @Override
             public void onFinish(){
                 nextTextView.setText("Time up!!!");
+
+                reset.setVisibility(View.VISIBLE);
+                settings.setVisibility(View.VISIBLE);
+                pause.setVisibility(View.GONE);
 
                 playerA.setCardBackgroundColor(getResources().getColor(default_color));
                 playerB.setCardBackgroundColor(getResources().getColor(default_color));
@@ -274,6 +270,53 @@ public class TimerFragment extends android.app.Fragment implements View.OnClickL
 
         }.start();
     }
+
+
+
+
+
+    public void initialToggler(final CardView player){
+        final CardView nextPlayer = ((player.getId() == R.id.playerA) ? playerB : playerA);
+        final TextView nextTextView = (nextPlayer.getId() == R.id.playerA) ? timerA : timerB;
+        TextView thisMoveView = (nextPlayer.getId() == R.id.playerA) ? movesB : movesA;
+
+        reset.setVisibility(View.GONE);
+        settings.setVisibility(View.GONE);
+        pause.setVisibility(View.VISIBLE);
+
+        thisMoveView.setText(String.format("Moves: %d", (Integer.parseInt(thisMoveView.getText().toString().trim().split(" ")[1])) + 1));
+
+        player.setCardBackgroundColor(getResources().getColor(inactive_color));
+        nextPlayer.setCardBackgroundColor(getResources().getColor(active_color));
+
+        countDownTimer = new CountDownTimer(delay, 1000){
+            @Override
+            public void onTick(long l){
+                nextPlayer.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                        countDownTimer.cancel();
+                        if(delay == 0){
+                            playerToggler(nextPlayer);
+                        }
+                        else{
+                            initialToggler(nextPlayer);
+                        }
+                    }
+                });
+                player.setOnClickListener(null);
+            }
+
+            @Override
+            public void onFinish(){
+                playerToggler(player);
+            }
+
+        }.start();
+    }
+
+
+
 
 
 
@@ -317,13 +360,18 @@ public class TimerFragment extends android.app.Fragment implements View.OnClickL
 
     @Override
     public void onStop(){
-        countDownTimer.cancel();
+        if(countDownTimer != null){
+            countDownTimer.cancel();
+        }
         super.onStop();
     }
 
     @Override
     public void onPause(){
-        countDownTimer.cancel();
+        if(countDownTimer != null){
+            countDownTimer.cancel();
+        }
+
         super.onPause();
     }
 }
