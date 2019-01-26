@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#333333"
+    tools:context=".fragments.NewGameModeFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:id="@+id/header"
+            android:background="#111111">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="New Mode"
+                android:gravity="center"
+                android:layout_marginStart="15dp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:textSize="23dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Save"
+                android:id="@+id/save"
+                android:textSize="16sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_alignParentEnd="true"
+                android:padding="15dp"/>
+
+        </RelativeLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/header"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Choose a name"
+                    android:textColor="@android:color/holo_blue_dark" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/block_spinner_layout"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000000"
+                    android:hint="Name"
+                    android:singleLine="true"
+                    android:id="@+id/name"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="0dp"
+                    android:textSize="14sp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a duration"
+                    android:textColor="@android:color/holo_blue_dark" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:id="@+id/duration"
+                    android:background="@drawable/block_spinner_layout"
+                    android:layout_marginTop="10dp">
+
+
+                </Spinner>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="40dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Select a delay interval"
+                    android:textColor="@android:color/holo_blue_dark" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:background="@drawable/block_spinner_layout"
+                    android:id="@+id/delay"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp">
+
+
+                </Spinner>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</ScrollView>
