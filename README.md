@@ -21,10 +21,10 @@ Android smartphone (min SDK: 19)
 ### Preview:
 
 <p>
-  <img src="picss/splash.png" width="300px"/>
-  <img src="picss/default.png" width="300px"/>
-  <img src="picss/active.png" width="300px"/>
-  <img src="picss/settings.png" width="300px"/>
+  <img src="picss/splash.png" width="200px"/>
+  <img src="picss/default.png" width="200px"/>
+  <img src="picss/active.png" width="200px"/>
+  <img src="picss/settings.png" width="200px"/>
 </p>
 
 
