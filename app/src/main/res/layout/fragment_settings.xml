@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="Save"
-            android:id="@+id/save_text_view"
+            android:id="@+id/save_text"
             android:textSize="16sp"
             android:textColor="@android:color/holo_green_dark"
             android:textStyle="bold"
