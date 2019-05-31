@@ -81,7 +81,7 @@
         android:layout_centerInParent="true">
 
         <ImageButton
-            android:id="@+id/resetBut"
+            android:id="@+id/reset"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:scaleType="fitCenter"
@@ -92,7 +92,7 @@
             android:background="@android:color/transparent" />
 
         <ImageButton
-            android:id="@+id/pauseBut"
+            android:id="@+id/pause"
             android:layout_width="40dp"
             android:src="@drawable/tas_pause"
             android:layout_height="match_parent"
@@ -102,7 +102,7 @@
             android:scaleType="fitCenter" />
 
         <ImageButton
-            android:id="@+id/settingsBut"
+            android:id="@+id/settings"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:src="@drawable/settings"
