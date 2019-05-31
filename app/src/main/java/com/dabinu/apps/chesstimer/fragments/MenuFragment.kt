@@ -25,38 +25,51 @@ import java.io.Serializable
 import java.util.ArrayList
 
 
-class MenuFragment : android.app.Fragment(), Serializable, View.OnClickListener {
+class MenuFragment : android.app.Fragment(), Serializable{
 
 
 
     lateinit var allModes: ArrayList<GameMode>
     lateinit var allModeNames: ArrayList<String>
     lateinit var allTimeInMinutes: ArrayList<String>
-    lateinit var fragmentTransaction: FragmentTransaction
-    lateinit var sharedPreferences: SharedPreferences
-    lateinit var editor: SharedPreferences.Editor
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_menu, container, false)
-
-        getAllModes()
-        getAllTimeInMinutes()
-        init(view)
 
         return view
     }
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    fun init(view: View) {
-        sharedPreferences = activity.getSharedPreferences("GAME", Context.MODE_PRIVATE)
-        editor = sharedPreferences.edit()
+        getAllModes()
+        getAllTimeInMinutes()
+        init()
+
+    }
 
 
-        start_game.setOnClickListener(this)
+    fun init() {
 
-        settings.setOnClickListener(this)
-        about.setOnClickListener(this)
+        start_game.setOnClickListener{
+            var sharedPreferences: SharedPreferences = activity.getSharedPreferences("GAME", Context.MODE_PRIVATE)
+            var editor: SharedPreferences.Editor = sharedPreferences.edit()
+
+            if (mode_spinner.selectedItem == "Normal") {
+                editor.putString("duration", (time_spinner.selectedItem as String).split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0])
+                editor.putString("delay", "0")
+                editor.apply()
+            } else {
+                editor.putString("duration", allModes[allModeNames.indexOf(mode_spinner.selectedItem as String)].duration)
+                editor.putString("delay", allModes[allModeNames.indexOf(mode_spinner.selectedItem as String)].delay)
+                editor.apply()
+            }
+            goToFragement(TimerFragment())
+        }
+
+        settings.setOnClickListener{goToFragement(SettingsFragment())}
+        about.setOnClickListener{goToFragement(AboutFragment())}
 
 
 
@@ -133,30 +146,11 @@ class MenuFragment : android.app.Fragment(), Serializable, View.OnClickListener 
 
 
     fun goToFragement(fragment: Fragment) {
-        fragmentTransaction = activity.fragmentManager.beginTransaction()
+        var fragmentTransaction: FragmentTransaction = activity.fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.container, fragment)
         fragmentTransaction.commit()
     }
 
-
-    override fun onClick(view: View) {
-        if (view.id == R.id.settings) {
-            goToFragement(SettingsFragment())
-        } else if (view.id == R.id.about) {
-            goToFragement(AboutFragment())
-        } else if (view.id == R.id.start_game) {
-            if (mode_spinner.selectedItem == "Normal") {
-                editor.putString("duration", (time_spinner.selectedItem as String).split(" ".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0])
-                editor.putString("delay", "0")
-                editor.apply()
-            } else {
-                editor.putString("duration", allModes[allModeNames.indexOf(mode_spinner.selectedItem as String)].duration)
-                editor.putString("delay", allModes[allModeNames.indexOf(mode_spinner.selectedItem as String)].delay)
-                editor.apply()
-            }
-            goToFragement(TimerFragment())
-        }
-    }
 
 
     fun setTimerAdapter(isZero: Boolean) {

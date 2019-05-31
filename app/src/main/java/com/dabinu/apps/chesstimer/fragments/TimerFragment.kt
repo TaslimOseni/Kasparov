@@ -49,17 +49,24 @@ class TimerFragment : android.app.Fragment(), View.OnClickListener, Runnable {
     var duration: Long = 0
     internal var delay: Long = 0
     lateinit var fragmentTransaction: FragmentTransaction
-    lateinit var background: RelativeLayout
     internal var countDownTimer: CountDownTimer? = null
     internal lateinit var vibrator: Vibrator
     private val _handler = Handler()
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.fragment_timer, container, false)
 
+        return view
+    }
+
+
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         setFullscreen(activity)
+
         if (Build.VERSION.SDK_INT > 10) {
             registerSystemUiVisibility()
         }
@@ -68,9 +75,6 @@ class TimerFragment : android.app.Fragment(), View.OnClickListener, Runnable {
         loadGameDetails()
         loadAllSettings()
         init()
-
-
-        return view
     }
 
 
@@ -109,6 +113,9 @@ class TimerFragment : android.app.Fragment(), View.OnClickListener, Runnable {
         pause.setOnClickListener(this)
         reset.setOnClickListener(this)
         settings.setOnClickListener(this)
+
+        playerA.setOnClickListener(this)
+        playerB.setOnClickListener(this)
 
         vibrator = activity.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
 

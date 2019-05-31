@@ -31,17 +31,21 @@ class NewGameModeFragment : android.app.Fragment(), View.OnClickListener {
     lateinit var duration_units: ArrayList<String>
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.fragment_new_game_mode, container, false)
-        init(view)
-
 
         return view
     }
 
+    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    fun init(view: View) {
+        init()
+    }
+
+
+    fun init() {
 
         initDelayUnits()
 

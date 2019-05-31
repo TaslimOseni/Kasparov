@@ -58,7 +58,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:text="Github link"
-            android:id="@+id/github_link"
+            android:id="@+id/github"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:backgroundTint="#222222"

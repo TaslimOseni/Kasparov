@@ -13,6 +13,7 @@ import android.widget.Button
 import android.widget.Toast
 
 import com.dabinu.apps.chesstimer.R
+import kotlinx.android.synthetic.main.fragment_about.*
 
 
 /**
@@ -21,11 +22,9 @@ import com.dabinu.apps.chesstimer.R
 class AboutFragment : android.app.Fragment() {
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.fragment_about, container, false)
-
-        val github = view.findViewById<Button>(R.id.github_link)
 
         github.setOnClickListener { startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/TaslimOseni/kasparov"))) }
 
